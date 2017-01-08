@@ -14,7 +14,7 @@ public class Example01 {
 	public static void main( String[] args )
 	{
 
-		thisMethod(1200);
+		thisMethod(12000);
 
 	}
 
