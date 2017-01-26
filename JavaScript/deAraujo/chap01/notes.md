@@ -4,9 +4,9 @@
 
 	JavaScript is about creating and destroying objects
 
-JS is a **prototype-based** OO language. It is **not a classed based** like Python is. The main purpose of class based and prototype based languages are to full fill a niche in the lOO ethos **by sharing code and avoiding redundancy**
+JS is a **prototype-based** OO language. It is **not a classed based** like Python is. The main purpose of class based and prototype based languages are to full fill a niche in the OO ethos **by sharing code and avoiding redundancy.**
 
-In a class-based languages the programmer creates a blue-print( the class )and then objects are derived from this *schematic*
+In a class-based languages the programmer creates a blue-print( the class )and then objects are derived from this *schematic.*
 
 Like in a class paradigm, this technique avoids repeating code and it saves memory. **In a prototype language, the programmer creates an object and allows it to become a prototype** for the creation of other objects. In theory this allows objects to be linked together in a *hierarchical* manner. The code can reused forming a protoypical chain.
 
@@ -52,7 +52,7 @@ JS primitive types:
 
    * Null
 
-  * Undefined
+   * Undefined
 
 Since these are *simple values* they are stored **directly** in the location by the variable itself (in the **Stack** ): they are one and the same. For other types of data, **variables are nothing but labels** or symbols that point to the bigger stuff at the heap.
 
