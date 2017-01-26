@@ -66,4 +66,6 @@ The **Undefined** type is assigned to any *declared* variable that does not yet 
 
 **String** primitive type, normally in other languages are considered as reference types, however in JS they are considered to be a **Primitive Type**
 
-         Strings are not immutable
+         Strings are NOT immutable in JS
+
+
