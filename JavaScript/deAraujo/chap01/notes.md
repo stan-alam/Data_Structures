@@ -97,3 +97,37 @@ The Global object is a **mutant** it takes on a different life depending where i
 
 ```
 
+Once *declared* as an object, the new object *stan* "inherits by pointing to" **properties* such as:
+
+    A). A Constructor - Liken a constructor to a formula for creating similar future objects via the
+    new operator. A constructor is a reference to a function. If you create new instances of an object,
+    a constructor can be used as a script which services as an interface with rules of what can and
+    cannot be allows on the new object to be. This simplifies conception and it saves memory because all
+    objects can feed from its source ( the present source ), we only have to code this source once.
+    independently of how many object instances there are.
+    	An inherited constructor is a pointer to a source, and it not necessary for the
+    functionality of the object already constructed. It serves only to give to a future object,the right
+    to be born and exist via the constructor umbilical cord. A constructor takes advantage of the hidden
+    parameter called this, a generic placeholder that will represent the object being processed.
+    The English equivalent is the pronoun "whose."
+
+    B) Prototype -- is another inherited property which is a built-in interface. Prototype acts an
+    umbilical cord or pipeline for an object to inherit properties and methods from a parent.
+    "Protos" or parent is the source of which the current object inherits properties/methods from
+    another object somewhere above the chain. The usefulness of this link goes beyond the current object
+    itself as other objects of a lower hierarchy may also inherit traits from their grandparent. Like the
+    constructor, the prototype link is used only in retrieval. It has no effect on updating prototypes.
+    This means that any change in the current object does not change its prototype or parent source. We
+    can also think of prototype as a list of all methods the object is authorized to use. Every new
+    instance of the object inherits this list.
+
+**Do not think of JavaScript in terms of inheriting properties and methods.** Think of it in terms of interfaces. Some objects have methods. These methods can be interfaced with other objects down the pipeline and other objects can use them to create their own functionality which may or may not be similar to the parent object.
+
+     Imagine that the Parent Object is a reservoir from which the water flowing this supply is the prototype
+     chain. Water is the prototype chain in which properties/methods float, making themselves avialable to objects
+     down the pipeline.
+
+#2 Object Methods:
+
+As for **inherited methods** e.g. stan inherits by "pointing to" **methods** from its parent object, the "Object" object, such as:
+
