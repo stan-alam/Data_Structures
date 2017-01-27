@@ -68,4 +68,32 @@ The **Undefined** type is assigned to any *declared* variable that does not yet 
 
          Strings are NOT immutable in JS
 
+Since the variable and the data are the same when it comes to primitive values, the whole variable is replaced when we modify the string. This replacement happens because of the memory size necessary to accommodate the new data. The replacement happens in the background and is not noticeable to the user.
+
+
+A sting value can store 0 + characters and is represented by a 16-bit positive integer. The first position is numbered [zero]
+In a JS string the last position of the last character **IS** the length of the value in the string **minus one.** e.g.
+
+So for the string **'Tony'** The first position of the last character is the length of 'Tony' - 1, or 4 -1 = 3. When a string contains actual textual data, each element is considered a single UTF-16 code unit.
+
+If a string expands, **a new string replaces the old string** and the **old data is discarded**
+
+
+
+##1.3 Variables vs Reference Types
+
+**Numbers, Strings, Booleans** => JavaScript primitives.
+
+As for **reference types**, these are **object definitions**. Other languages use *classes.* Classes are not used in the latest ECMA script. ECMA-262 is the specs for JavaScript and the browser in which it is executed in.
+
+**Global Object** This is the prototype (the **template**) for which **every other object created will inherit** ***standard properties***
+
+The Global object is a **mutant** it takes on a different life depending where it used, when in the browser, the gloabl object becomes the **Window Object**
+
+
+```Javascript
+
+  var stan = new Object();
+
+```
 
