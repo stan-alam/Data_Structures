@@ -131,3 +131,9 @@ Once *declared* as an object, the new object *stan* "inherits by pointing to" **
 
 As for **inherited methods** e.g. stan inherits by "pointing to" **methods** from its parent object, the "Object" object, such as:
 
+a) **hasOwnProperty** This method does *not* check *up* or *down* the chain of inheritance. It only verifies if the object in question has created **its own** properties ( for example property 'writer': does **object_name.OwnProperty('writer'))return true** *if* it exists **and if** it has been created, *not* inherited from up the chain.
+
+does stanObj have it's own property of toString?
+
+b) is **PrototypeOf** The ProtoType of method allows us to check if an object feeds its magic directly from another object. We need to include the term prototype in order to use this method. In other words, **"ObjectOne.isPrototypeOf(ObjectTwo)" will not work because JavaScript does not know what exactly we mean by that command.
+
