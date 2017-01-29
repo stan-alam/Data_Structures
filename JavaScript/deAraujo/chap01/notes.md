@@ -139,3 +139,54 @@ does stanObj have it's own property of toString?
 
 b) is **PrototypeOf** The ProtoTypeOf method allows to check if an object feeds its magic directly from another object. We need to include the term prototype in order to use this method. In other words, **"ObjectOne.isPrototypeOf(ObjectTwo)" will not work because JavaScript does not know what exactly we mean by that command.**
 
+c) **propertyIsEnumerable** -- method is used to determine where the specified property is an object, *is visible enough*
+listed to be enumerated in a script such as for ... in loop. *It actually lists the object own properties* because own properties can be enumerated, but all inherited properties are not in the *enumerable* list and will not appear on a 'for...loop'
+
+d) **toString()** Every object has a toString() method. It is automatically called when the object is to be represented as a text value like when we alert(object) or console.log it. String conversation happens when a string representation of an object is required.
+
+e) **valueOf()** JS returns the primitive value of a specified object. stanObj.valueOf(); may return an **Array, Boolean, Data, Function, Number, Object, String.** JS uses this method internally but can be called on purpose. Objects such as Math and Error do not have a built-in valueOf method.
+
+
+##Back to Properties
+
+         A property of an object can be explained as a variable attached to the new object
+         * these properties will be overwritten when creating a new object.
+
+in the case of stanObj = new Object(); **stanObj is NOT the object(duh!)**
+
+stanObj is the label, a *symbol* technically stanObj is a variable, a pointer which temporarily resides in the stack and points to an **object** instantiated (cloned but using existing functionality ) from a **Template**. This object resides in the heap and once the object is reassigned or deleted the label (variable) stanObj goes into **garbage collection mode** from where it will be erased.
+
+in JavaScript *almost* **is an object**. All primitive types **except null** and **undefined**, are actually treated as objects, because they are internally wrapped into objects, i.e. when the interpreter/browser needs to implement a method to process the primitive in question.
+
+Because they can be wrapped as objects, properties and methods can be assigned to primitives, showing all the characteristics of an object. This is because **JS** has a prototype **reference** for **Boolean**, **Number** and **String** in its library, which is automatically called in when temporarily needed to wrap a primitive value:
+
+## 1.4 Everything comes from Objects
+
+```Javascript
+
+  var z = new Object;
+
+  typeof z;
+
+  var b = z;
+
+  var z = "hello";
+
+  typeof z;
+
+
+```
+
+b still points to the object, while z has been replaced with a string.
+
+All JS native objects start with a capital letter.
+
+if z and b were pointing to the same object, and z modified the object, then b will also be pointing to the modified object.
+
+This occurs only when we assign a **reference data to variables** if variable **a** is a string or **a** is a number, and is later assign it to be, such as that **b = a**, string a is copied to string b.
+
+With primitives, each variable and its data is independent of any other variable.
+
+primitives live on the stack
+
+if a variable such as **b** is attached to an object such as 123 i.e. a number, now the type b *is* a number and the object that b was previously pointing to is by definition no longer viable it is slated for garbage collection
