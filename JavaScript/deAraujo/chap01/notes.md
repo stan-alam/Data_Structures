@@ -66,7 +66,9 @@ The **Undefined** type is assigned to any *declared* variable that does not yet 
 
 **String** primitive type, normally in other languages are considered as reference types, however in JS they are considered to be a **Primitive Type**
 
-         Strings are NOT immutable in JS
+         Strings ARE immutable in JS : fixed values of which reside in the stack
+         if the string is edited then the variable gets replaced by another
+         string variable of a shorter or longer length and with the same name.
 
 Since the variable and the data are the same when it comes to primitive values, the whole variable is replaced when we modify the string. This replacement happens because of the memory size necessary to accommodate the new data. The replacement happens in the background and is not noticeable to the user.
 
@@ -93,7 +95,7 @@ The Global object is a **mutant** it takes on a different life depending where i
 
 ```Javascript
 
-  var stan = new Object();
+  var stanObj = new Object();
 
 ```
 
@@ -135,5 +137,5 @@ a) **hasOwnProperty** This method does *not* check *up* or *down* the chain of i
 
 does stanObj have it's own property of toString?
 
-b) is **PrototypeOf** The ProtoType of method allows us to check if an object feeds its magic directly from another object. We need to include the term prototype in order to use this method. In other words, **"ObjectOne.isPrototypeOf(ObjectTwo)" will not work because JavaScript does not know what exactly we mean by that command.
+b) is **PrototypeOf** The ProtoTypeOf method allows to check if an object feeds its magic directly from another object. We need to include the term prototype in order to use this method. In other words, **"ObjectOne.isPrototypeOf(ObjectTwo)" will not work because JavaScript does not know what exactly we mean by that command.**
 
