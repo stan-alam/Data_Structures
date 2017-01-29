@@ -189,4 +189,45 @@ With primitives, each variable and its data is independent of any other variable
 
 primitives live on the stack
 
-if a variable such as **b** is attached to an object such as 123 i.e. a number, now the type b *is* a number and the object that b was previously pointing to is by definition no longer viable it is slated for garbage collection
+if a variable such as **b** is attached to an object such as 123 i.e. a number, now the type b *is* a number and the object that b was previously pointing to is by definition no longer viable and it is slated for garbage collection.
+
+
+```Javascript
+
+  var x = hat;
+
+  var color = "azul"
+
+  typeof x;
+
+  // result is "string "
+
+  typeof color;
+
+  //string
+
+  var shirt = { color: "white", size: "M", material: "cotton" };
+
+  typeof shirt;
+
+  //object
+
+
+```
+
+When the JS interpreted sees the curly braces it places the object into the heap, and the shirt variable as the pointer to the object.
+
+e.g
+
+```Javascript
+
+  shirt.color;
+  // "white"
+
+  shirt.size;
+  // "M"
+
+  shirt.material;
+  // "cotton"
+
+```
