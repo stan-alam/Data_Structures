@@ -231,3 +231,48 @@ e.g
   // "cotton"
 
 ```
+
+**In JS almost everything is an object**
+
+*variable declarations always terminate with a semicolon
+
+```Javascript
+
+  var shirt = { "color": "white", "size": "M", "material": "cotton" };
+
+  typeof shirt;
+
+  // object
+
+```
+
+By applying curly braces the JS engine saw that this variable declaration would be more complex than just a primitive. It places the object into the heap and allows the variable, i.e. 'shirt' to act as the pointer from the stack.
+
+The variable 'shirt' has **properties** and **methods** inherited from the *Object template.* Use **Dot syntax** to access values within the object.
+
+        An object is a bunch of mapped key-value pairs items harnessed together by a variable name, pointing to the data.
+
+
+Brackets can also be used to access properties of the object.
+
+```Javascript
+
+  var shirt = { "color": "white", "size": "M", "material": "cotton" };
+
+  shirt["color"];
+
+  // white
+
+  shirt["material"];
+  // cotton
+
+```
+
+brackets allow to use numeric keys, while dot syntax does not allow the use of numbers.
+
+##Objects##
+
+Think of variables as symbols that point to data in the stack. The *stack* points to data in the *heap*; the key-value pairs are located in the heap, bound by a pointer in the stack. If no pointer exists, then no key value pairs will exist. Just as a coin, one side does not exist without the other. **An unassigned variable has a value of undefined but still exists** By assigning the variable to **null** will clear it from working memory.
+To check if a variable is assigned or not use **typeof**
+
+
