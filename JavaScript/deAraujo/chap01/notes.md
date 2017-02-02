@@ -347,4 +347,4 @@ var addMe100 = function (param1) {
 
 ```
 
-the }; is the **function definition statement**, meaning that the defining variable addMe100 points to some unnamed function
+the **};** is the **function definition statement**, meaning that the defining variable **addMe100** *points* to some unnamed function
