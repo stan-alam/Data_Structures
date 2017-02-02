@@ -26,7 +26,7 @@ Admire JS for what it is not by what it looks like.
 
 Memory management or the act of *managing computer memory* is defined as a way to dynamically allocate portions of memory to a program **at** its request. It is also the act of freeing memory for reuse when data is no longer needed ( in JS this is done by the Web Browser, e.g. the V8 engine )
 
-A *thread* of execution **is** the *smallest* sequence of programmed instructions that can be managed independently. Multiple threads can coexist within the same procless and share the same area.
+A *thread* of execution **is** the *smallest* sequence of programmed instructions that can be managed independently. Multiple threads can coexist within the same process and share the same area.
 
 **Memory can be divided into two distinct areas** the **stack** and the **heap**
 
@@ -275,4 +275,76 @@ brackets allow to use numeric keys, while dot syntax does not allow the use of n
 Think of variables as symbols that point to data in the stack. The *stack* points to data in the *heap*; the key-value pairs are located in the heap, bound by a pointer in the stack. If no pointer exists, then no key value pairs will exist. Just as a coin, one side does not exist without the other. **An unassigned variable has a value of undefined but still exists** By assigning the variable to **null** will clear it from working memory.
 To check if a variable is assigned or not use **typeof**
 
+Think of JS as a collection of objects inheriting functionality from their "parent object" to which they interface with.
 
+New objects can also override the original properties and methods and create their own.
+
+Newly created properties can be passed on down the pipeline via the object's **prototype** property every time we instanstiate or ( reproduce ) the object. We can also use the prototype to assign (adding) new functionality to the existing object, even to the global **for this particular instance**, anything that is added to the global object is temporary.
+
+```Javascript
+
+ var shelf = {"books":20, "CDs": 57, "Magazines": 19 };
+
+ shelf.CDs;
+ // 57
+
+ shelf.books
+ // 20
+
+ shelf.books = 21;
+
+ shelf.books;
+ // 21
+
+ shelf;
+ //results in Object{books: 21, CDs:57, Magazines: 19}
+
+                 // assign new items to the object:
+shelf.audioBooks = 11;
+
+
+//now call the object
+
+shelf;
+
+//result: Object{books: 21, CDs:57, Magazines: 19, audioBooks: 11};
+
+
+```
+
+**In this way a** *variable* **can point to a collection of data in key-value pairs, making the collection an object.** JS has **object wrapping**
+
+
+```Javascript
+
+var x = "pitbull";
+
+typeofx;
+
+// result: 4
+
+x.substring(0,3);
+//result pit
+
+
+
+```
+
+**the 0 ** parameter represents the first included character for the substring and the **3** parameter represents the first **excluded** character.
+
+
+
+## Assigning functions to a variable
+
+
+```Javascript
+
+var addMe100 = function (param1) {
+  var result = param1 + 100;
+  return result;
+};
+
+
+```
+
+the }; is the **function definition statement**, meaning that the defining variable addMe100 points to some unnamed function
