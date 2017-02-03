@@ -215,7 +215,7 @@ if a variable such as **b** is attached to an object such as 123 i.e. a number, 
 
 ```
 
-When the JS interpreted sees the curly braces it places the object into the heap, and the shirt variable as the pointer to the object.
+When the JS interpreter sees the curly braces it places the object into the heap, and the shirt variable as the pointer to the object.
 
 e.g
 
@@ -348,3 +348,35 @@ var addMe100 = function (param1) {
 ```
 
 the **};** is the **function definition statement**, meaning that the defining variable **addMe100** *points* to some unnamed function
+object on the heap, which in turn adds 100 to any *argument* passed in by the parameter. By adding a semicolon at the end you are assigning a variable, the same with this function. Functions are objects and **objects can also be a collection of functions**
+
+          A collection of functions designed to perform a specific assignment for an object is called a method.
+          Sometimes a method has only one function, other times, a method compromises of several functions in
+          the same method.
+
+When aggregating functionality that works together to attain a specific outcome/behavior is an object. Objects within objects make up a package known as a program.
+
+**The max number of parameters for a function in JS is 255** The parameter is the placeholder inside the parenthesis and is an **object array-lookalike** holding a max of 255 parameters. **Data is passed into the function by using the placeholder in the parenthesis, or parameter. The data is called the** *argument.* Data is then passed out of the function with the **return** statement. When the **return** is reached it acts as a **break** or halts the execution continuation of the function. When return is reached the function instance is destroyed, unless another variable is still pointing to it.
+
+Functions can be called *externally* as in the example, or *internally* within their own body. This is called **Recursion**
+
+In JS **functions are objects** They can be passed around just as any other object does.
+
+**Deference** the variable (i.e. the pointer) in order to remove it from the browser's memory, because **it is a global** variable and it will remain in memory until the program terminates. Deference means to **remove the reference** by making the variable **null.** This will eventually **clear the variable and the function.**
+
+
+```Javascript
+
+var addMe100 = function (param1) {
+  var result = param1 + 100;
+  return result;
+};
+
+addMe100 = null;
+
+```
+
+Using typeof for checking the *type* of the addMe100, typeof method will return an empty *object*, calling the function will result in the JS interpreter displaying 'Uncaught TypeError: addMe100 is not a function at anonymous:1:1'
+
+##1.6 Named Functions vs Anonymous Functions
+
