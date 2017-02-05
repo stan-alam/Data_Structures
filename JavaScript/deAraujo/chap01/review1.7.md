@@ -26,6 +26,6 @@
 
   * An **anonymous function** is a function *assigned* to a variable. It acts an expression of the variable. We terminate the variable assignment with a **semicolon.**
 
-  * When a function calls itself within its own body it is called *recursion.*
+  * When a function calls itself within its own body it is called **recursion.**
 
   * fin
