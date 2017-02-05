@@ -452,6 +452,48 @@ The function z resembles a variable, i.e. because only the **declaration name is
 
 The other difference between **y** and **z** : i.e. **y** can be called before it is declared in the function script because JS already recognizes **y** as a function and it will look for it. However, in **z**, of we call the function in **z** before the function assignment is written, there may be an error.
 
+```Javascript
+
+var name = "Darrick";
+
+function nameHim() {
+  var name;
+  console.log(name); //outputs undefined
+  name = "Adams";
+}
+
+```
+
+    is the same as:
+
+```Javascript
+
+var name = "Darrick";
+
+function nameHim() {
+  console.log(name); // outputs undefined
+  name = "Adams";
+  var name;
+}
+
+```
+
+    which is the same as this:
+
+```Javascript
+
+var name = "Darrick";
+
+function nameHim() {
+  console.log(name); //outputs undefined
+  var name = "Adams";
+}
+
+```
+**JS** is a permissive language, it has to do a lot of work under the hood. **Hoisting** is another "under the hood" action by JS where it moves all variables declarations to the top of a function, as the example above. All three examples are the same because JS reads the body of the functions, and moves all the variable declarations to the top of the function. Note that it only moves the declaration **not the assignment**. Under the hood, all three function end up looking like the first. This to why the second and third examples output undefined rather than Darrick as you'd expect. Even though it seems that we're using the **name** variable containing **"Darick"** before assigning **"Adams"** to it, we're actually declaring a new and undefined **name** variable at the top of each function **[3]** Jump Start JavaScript page 62
+
+
+
      It is considered a best practice to declare all functions before calling them.
 
 Besides this using **anonymous** functions is a powerful technique, if implemented wisely, JQuery makes a lot of use of said functions.
