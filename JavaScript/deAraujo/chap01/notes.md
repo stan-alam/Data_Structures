@@ -485,3 +485,33 @@ Besides this using **anonymous** functions is a powerful technique, if implement
   * An **anonymous function** is a function *assigned* to a variable. It acts an expression of the variable. We terminate the variable assignment with a **semicolon.**
 
   * When a function calls itself within its own body it is called **recursion.**
+
+
+# 1.8 The Untouchable Object
+
+**The object resides in the *heap*. An object is a **reference type.**
+
+**How do we access an object?** - We access an object by assigning a label to it. **This label is known as a variable.** The variable points to the object.
+
+**What happens to the object when the variable is removed?** - The object is placed automatically in garbage collection to be deleted in the browser.
+
+**Can we directly touch the object we remove the variable?** - **NO!** We need to us a *pointer* i.e.(variable) to handle the object. Through the pointer and other manipulative techniques therefrom, we are able to manipulate or modify the object **via interface mechanisms** which depend on properties and methods available to the object.
+
+Objects inherit from the mother object, or the JS object template.
+
+    Objects are created by JS when we assign a variable to the object. The variable resides in the stack
+    and points to the location of the object in the heap. WIthout this umbilical cord leading the program
+    to the object, there is no object. If we cut the umbilical cord, we deference the variable (declaring it
+    null or reassigning it to something else), the object ceases to exist. :(
+    Without a variable pointing to the object there can be no object if the object has been created from
+    scratch, or instantiated from another object. Native objects such as built in objects and the
+    Object always exist. They are in standby waiting to be called by another variable whenever needed.
+    The permanent library never ceases.
+
+**This is an important concept** - JS is not just ECMAScript. JS is a combination of ECMAScript and environment where it is being used such as the browser( ie. the DOM & BOM ). ECMAScript is implemented by a JS Engine. There are several engines being used. e.g. Google's V8.
+
+
+# 1.8.2 Native Objects
+
+
+
