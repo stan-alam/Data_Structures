@@ -380,3 +380,80 @@ Using typeof for checking the *type* of the addMe100, typeof method will return 
 
 ##1.6 Named Functions vs Anonymous Functions
 
+The function **addMe100();** is an **anonymous** function. Meaning that the function is assigned to a **variable declaration** and it is an **expression** ( part of a program) of the *declared* variable.
+
+**In JavaScript we have variable declarations such as this"**
+
+**var x;**
+
+**We can also have function declarations:**
+
+**function y(){};**
+
+Declarations can have expressions such as:
+
+
+```Javascript
+
+x = 123;
+
+// or this:
+
+y () {
+  console.log("I am an expression... what are you ?");
+}
+
+```
+
+At the same time: **variables** can have **functions as expressions:**
+
+
+```Javascript
+
+var z = function() {
+
+
+  console.log("This function is an expression of z");
+
+
+
+};   //<-------------- notice the semicolon at the closing parenthesis, you will see this a lot in nodeJS
+```
+
+
+When a variable is declared it is usually **hoisted** or pulled up to the top of the **scope** by the interpreter, which lists all *variable declarations* on the top. Sort of like an index of what's available. **Only the declaration is hoisted not the expression.** This makes a difference when debugging the code and not so much the program at execution.
+
+```Javascript
+
+x = 123;
+
+// or this:
+
+y () {
+  console.log("I am an expression... what are you ?");
+}
+
+var z = function() {
+
+
+  console.log("This function is an expression of z");
+
+
+
+};
+
+```
+
+The following is figuratively described as on the top of the scope:
+
+**x, y(), z**
+
+The function z resembles a variable, i.e. because only the **declaration name is hoisted** and not the expression. It only means a bit more work when it comes to debugging.
+
+The other difference between **y** and **z** : i.e. **y** can be called before it is declared in the function script because JS already recognizes **y** as a function and it will look for it. However, in **z**, of we call the function in **z** before the function assignment is written, there may be an error.
+
+     It is considered a best practice to declare all functions before calling them.
+
+Besides this using **anonymous** functions is a powerful technique, if implemented wisely, JQuery makes a lot of use of said functions.
+
+*
