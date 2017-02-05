@@ -456,4 +456,4 @@ The other difference between **y** and **z** : i.e. **y** can be called before i
 
 Besides this using **anonymous** functions is a powerful technique, if implemented wisely, JQuery makes a lot of use of said functions.
 
-*
+* fin
