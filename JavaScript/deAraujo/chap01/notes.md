@@ -634,3 +634,19 @@ BOM is the wrapper (non standardized )all other objects are standardized. HEAD a
 |                                                                                                                                               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+
 ```
+##Upon opening a new window, the window belongs to the browser.The object is the window itself. In window.open("url").open is a method from the BOM
+
+# 1.8.4 What is a property?
+
+Peel the endless onion -->
+
+A property is an **association** between a name and one of the values of the object being considered, which is to say that **properties are the building blocks of objects**
+
+# 1.8.5 What is a variable?
+
+A variable is a "property" acting within an **execution context**
+
+# 1.8.6 What then is an execution context?
+
+**Execution context** is the scope *in which* something is executed. A variable declared inside of a function has a scope of its function or inner functions inside it. However, in execution context terms, each time the function is called the scope of this variable is different than other prior or future function call. **THIS IS THE EXECUTION CONTEXT**
+
