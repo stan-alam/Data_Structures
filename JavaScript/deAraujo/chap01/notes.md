@@ -584,7 +584,7 @@ An example of a "broad view" of the object instance:
 
 BOM is the wrapper (non standardized )all other objects are standardized. HEAD and BODY are siblings and children of HTML. IN the BODY section, the object show is a sibling of others within the BODY. e.g. **text** is actually an object in itself.
 
-
+```text
 
 +--------------------------------------------------------BOM Browser Object Model---------------------------------------------------------------+
 |                                                                                                                                               |
@@ -633,3 +633,6 @@ BOM is the wrapper (non standardized )all other objects are standardized. HEAD a
 |                                                                                                                                               |
 |                                                                                                                                               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+```
+
