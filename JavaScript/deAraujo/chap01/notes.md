@@ -529,7 +529,7 @@ Besides this using **anonymous** functions is a powerful technique, if implement
   * When a function calls itself within its own body it is called **recursion.**
 
 
-# 1.8 The Untouchable Object
+## 1.8 The Untouchable Object
 
 **The object resides in the *heap*. An object is a **reference type.**
 
@@ -553,7 +553,7 @@ Objects inherit from the mother object, or the JS object template.
 **This is an important concept** - JS is not just ECMAScript. JS is a combination of ECMAScript and environment where it is being used such as the browser( ie. the DOM & BOM ). ECMAScript is implemented by a JS Engine. There are several engines being used. e.g. Google's V8.
 
 
-# 1.8.2 Native Objects
+## 1.8.2 Native Objects
 
 Native objects help specify and define other objects. Native objects are also called **Standard Global Objects.**
 
@@ -568,7 +568,7 @@ Native objects help specify and define other objects. Native objects are also ca
 Some native objects, such as String and Math, allow access to their properties and methods without instantiating new objects from them. Other native objects, such as Date, require the develop to create a new instance in order to use their properties and methods.
 
 
-# 1.8.3 Hosted Objects
+## 1.8.3 Hosted Objects
 
 Other objects are supplied by the **host environment** which interface with ECMAScript to complete the whole JS functionality. In the browser, the other objects come from the **DOM** i.e. the document environment, and the **BOM** the browser environment.
 
@@ -633,6 +633,21 @@ BOM is the wrapper (non standardized )all other objects are standardized. HEAD a
 |                                                                                                                                               |
 |                                                                                                                                               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+
-
 ```
+##Upon opening a new window, the window belongs to the browser.The object is the window itself. In window.open("url").open is a method from the BOM
+
+## 1.8.4 What is a property?
+
+Peel the endless onion -->
+
+A property is an **association** between a name and one of the values of the object being considered, which is to say that **properties are the building blocks of objects**
+
+## 1.8.5 What is a variable?
+
+A variable is a "property" acting within an **execution context**
+
+## 1.8.6 What then is an execution context?
+
+**Execution context** is the scope *in which* something is executed. A variable declared inside of a function has a scope of its function or inner functions inside it. However, in execution context terms, each time the function is called the scope of this variable is different than other prior or future function call. **THIS IS THE EXECUTION CONTEXT**
+
 
