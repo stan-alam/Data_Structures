@@ -555,5 +555,82 @@ Objects inherit from the mother object, or the JS object template.
 
 # 1.8.2 Native Objects
 
+Native objects help specify and define other objects. Native objects are also called **Standard Global Objects.**
+
+**Some of the standard built in objects are the following:**
+
+    Array, Boolean, Data, Function, Math, Number, Object, RegEx, String
+
+**Global Objects** is NOT the **The Global Object** (or the mother of all objects, aka the object Object)
+
+**Variables vs. Reference Types** For example in the browser **Window** is the mother of all objects, it is the very first object, the root of the script and any global declaration ( e.g. var x; ) are scoped at the *window* level or at the level of the *Global Object*
+
+Some native objects, such as String and Math, allow access to their properties and methods without instantiating new objects from them. Other native objects, such as Date, require the develop to create a new instance in order to use their properties and methods.
 
 
+# 1.8.3 Hosted Objects
+
+Other objects are supplied by the **host environment** which interface with ECMAScript to complete the whole JS functionality. In the browser, the other objects come from the **DOM** i.e. the document environment, and the **BOM** the browser environment.
+
+**BOM** or the **browser Object Model** is a collection of objects that define the browser window and its contents. By using the **BOM**, developers can perform actions that do no directly relate to the document **such move the window and change text in the status bar** (or maximize/min the browser window, like Selenium?)
+Only recently has BOM been standardized i.e. in HTML5
+
+**DOM** Document Object Model: this is an **object** which defines the document being displayed in the browser window. DOM has been standadized and it is an object within the Window scope. **Window is an internal part of the BOM.**
+
+JS is embedded in other tools and apps not just browsers. Each of these applications provides it own unique **object model**, which allows the core language to interface with the host environment. JavaScript core (ECMAScript), giving a more uniform interpretation of JS across these applications. **The Global Object** takes a different life in each of these cases, and it serves as a *liason* between the core language and its host. Implementations include Adobe Reader, PhotoShop, DreamWeaver, and Flash which has a JS variant known as **Action Script** Microsoft has **Type Script.**
+
+
+An example of a "broad view" of the object instance:
+
+BOM is the wrapper (non standardized )all other objects are standardized. HEAD and BODY are siblings and children of HTML. IN the BODY section, the object show is a sibling of others within the BODY. e.g. **text** is actually an object in itself.
+
+
+<text>
++--------------------------------------------------------BOM Browser Object Model---------------------------------------------------------------+
+|                                                                                                                                               |
+|   +---<HTML>---------------------------------------------------------------------------------------------------------------------------+      |
+|   |                                                                                                                                    |      |
+|   |    +                                                                                                                               |      |
+|   |   +------------------------<Head>---------------------------+    +---------------------<Body>---------------------------+          | +    |
+|   |   |                                                         |    |   +--------<DIV>------------+                        |          |      |
+|   |   |                                                         |    |   |                         |                        |          |      |
+|   |   |                                                         |    |   |     +------<P>----+     |                        |          |      |
+|   |   |                                                         |    |   |     |             |     |                        |          |      |
+|   |   |          +-------------<Title>--------------+           |    |   |     |             |     |                        |          |      |
+|   |   |          |                                  |           |    |   |     |             |     |                        |          |      |
+|   |   |          |                                  |           |    |   |     |             |     |                        |          |      |
+|   |   |          |    +-------  <text>--------+     |           |    |   |     |             |     |                        |          |      |
+|   |   |          |    |                       |     |           |    |   |     +-------------+     |                        |          |      |
+|   |   |          |    |                       |     |           |    |   |                         |                        |          |      |
+|   |   |          |    |                       |     |           |    |   +-------------------------+                        |          |      |
+|   |   |          |    |                       |     |           |    |                                                      |          |      |
+|   |   |          |    |                       |     |           |    |   +-------<P>---------------+                        |          |      |
+|   |   |          |    |                       |     |           |    |   |                         |                        |          |      |
+|   |   |          |    |                       |     |           |    |   |    +---<text>------+    |                        |          |      |
+|   |   |          |    |                       |     |           |    |   |    |               |    |                        |          |      |
+|   |   |          |    |                       |     |           |    |   |    |               |    |                        |          |      |
+|   |   |          |    |                       |     |           |    |   |    |               |    |                        |          |      |
+|   |   |          |    |                       |     |           |    |   |    |               |    |                        |          |      |
+|   |   |          |    |                       |     |           |    |   |    +---------------+    |                        |          |      |
+|   |   |          |    |                       |     |           |    |   |                         |                        |          |      |
+|   |   |          |    |                       |     |           |    |   +-------------------------+   +------<UL>--------+ |          |      |
+|   |   |          |    +-----------------------+     |           |    |                                 |   +---<text>--+  | |          |      |
+|   |   |          |                                  |           |    |                                 |   |           |  | |          |      |
+|   |   |          +----------------------------------+           |    |                                 |   |           |  | |          |      |
+|   |   |                                                         |    |          etc                    |   |           |  | |          |      |
+|   |   |                                                         |    |                                 |   |           |  | |          |      |
+|   |   |                                                         |    |                                 |   +-----------+  | |          |      |
+|   |   |                                                         |    |                                 |                  | |          |      |
+|   |   |                                                         |    |                                 +------------------+ |          |      |
+|   |   |                                                         |    |                                                      |          |      |
+|   |   +---------------------------------------------------------+    +------------------------------------------------------+          |      |
+|   |                                                                                                                                    |      |
+|   |                                                                                                                                    |      |
+|   |                                                                                                                                    |      |
+|   |                                                                                                                                    |      |
+|   |                                                                                                                                    |      |
+|   +------------------------------------------------------------------------------------------------------------------------------------+      |
+|                                                                                                                                               |
+|                                                                                                                                               |
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+</text>
