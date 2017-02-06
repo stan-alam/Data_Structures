@@ -650,4 +650,8 @@ A variable is a "property" acting within an **execution context**
 
 **Execution context** is the scope *in which* something is executed. A variable declared inside of a function has a scope of its function or inner functions inside it. However, in execution context terms, each time the function is called the scope of this variable is different than other prior or future function call. **THIS IS THE EXECUTION CONTEXT**
 
+When the JS interpreter starts, there is only one execution context, it is the global context. In the Global context we can visualize scope a lot better than afterwards. As each function executes, the context changes, and since JS only **does one thing at a time the execution context is unique.**
+
+When JS is running in the browser the global context is the **WINDOW.**
+
 
