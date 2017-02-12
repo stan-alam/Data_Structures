@@ -700,7 +700,62 @@ var y = function( ) {
    * Although in the global scope the keyword "var" could be omitted because the variable is available down the scope chain, it is good practice to always write it in when declaring a variable in order to prevent confusion by JS interpreter. **var binds the variable to its immediate scope.** In the latest ECMA5, omitting var will throw an error.
 
 
+#1.10 An intro the Window Object
 
+  The Global Object becomes the Window Object, when using JS in the browser environment.
+
+
+```Javascript
+
+var myText = "hola, Mundo!";
+
+myText; // returns "hola, Mundo!"
+
+window.myText; //same thing
+
+console.log(myText); // same thing without double quotes
+
+window.console.log(myText); //same thing as console.log
+
+this.myText;
+// in this case "hola, Mundo!" is returned (**this** substitutes or points to the object under which the variable is scoped at. In this case, the // object is window)
+
+this.console.log(myText); //returns the same thing as this.myText
+
+```
+Now lets look at a function.
+
+```Javascript
+
+var x = function() {
+  var text2 = "hola, mundo!";
+};
+
+x; //returns function() { var text2 = "hola, mundo!";};
+
+window.x;
+// returns function() { var text2 = "hola...m";};
+
+text2; // returns text2 is not defined. This is because text2 does not exist in the global scope
+
+window.text2; // also returns undefined. WIndow recognizes function x, but does not recognize the function's local variables.
+
+
+```
+
+consider this loop :
+
+```Javascript
+for (var i = 0; i < 5; i++ ) //returns 0,1,2,3,4,
+  {
+    console.log(i);
+  }
+// call i
+
+i;
+
+// returns 5
+```
 
 
 
