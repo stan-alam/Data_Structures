@@ -654,4 +654,29 @@ When the JS interpreter starts, there is only one execution context, it is the g
 
 When JS is running in the browser the global context is the **WINDOW.**
 
+Everything runs under window  ( the object Object ). We can subdivide into functions which are *objects* that include groups of code environments. A function context runs each time we call the function and it clears out when the program exists the function.
+
+When declaring **var x = "stan";** i.e in the browser environment **x** becomes a property of the **Global Object** known in the browser as **window.**
+
+If you type **x;** in the console, the result will be **"stan"**
+
+By typing in the console **window.x;** the result is still **"stan"** Since **"stan"** *is a value* of window and x points to "stan."
+
+By typing :
+
+
+```Javascript
+
+var y = function( ) {
+  var z = "Darrick";
+};
+
+```
+**z** is a property of function **y**, not of **window.** Function y is still a function of the *global object(window).*
+
+
+
+
+
+
 
