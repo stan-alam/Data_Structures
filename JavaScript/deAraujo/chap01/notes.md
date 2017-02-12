@@ -761,5 +761,18 @@ i;
 // returns 5
 ```
 
+**now coding the same loop inside a function**
 
+```Javascript
+
+var x = function() {
+  for (var y = 0; y < 5; y++){
+  console.log(y);
+  }
+};
+
+```
+**In this case if by trying to call y, will return** *y is not defined.*
+
+This means that the function has isolated and destroyed the temp variable. This means memory has been released unlike creating the loop in global space. **x still points to the function but it can be set to null.**
 
