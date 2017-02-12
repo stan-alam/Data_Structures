@@ -718,7 +718,9 @@ console.log(myText); // same thing without double quotes
 window.console.log(myText); //same thing as console.log
 
 this.myText;
-// in this case "hola, Mundo!" is returned (**this** substitutes or points to the object under which the variable is scoped at. In this case, the // object is window)
+// in this case "hola, Mundo!" is returned ( this substitutes or points to the object
+//under which the variable is scoped at. In this case, the
+// object is window)
 
 this.console.log(myText); //returns the same thing as this.myText
 
@@ -738,7 +740,9 @@ window.x;
 
 text2; // returns text2 is not defined. This is because text2 does not exist in the global scope
 
-window.text2; // also returns undefined. WIndow recognizes function x, but does not recognize the function's local variables.
+window.text2; // also returns undefined.
+//WIndow recognizes function x, but does not recognize
+//the function's local variables.
 
 
 ```
