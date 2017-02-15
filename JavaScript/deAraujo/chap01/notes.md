@@ -774,5 +774,56 @@ var x = function() {
 ```
 **In this case if by trying to call y, will return** *y is not defined.*
 
-This means that the function has isolated and destroyed the temp variable. This means memory has been released unlike creating the loop in global space. **x still points to the function but it can be set to null.**
+This means that the function has isolated and destroyed the temp variable. This means memory has been released unlike creating the loop in global space. **x still points to the function but it can be set to null.** In either case this shows how functions can isolate variables from the global object ... and this brings the topic of memory leaks into the conversation.
 
+
+    The object window is both: the ECMAScript's Global Object, and also the browser's BOM central object
+
+Each window represents an **instance of the browser** itself. The object window is the global *interface* between the core JavaScript language and the browser. It represents the global scope for every variable and function on the webpage.
+
+Properties can be added to the object window, but these will exist on a permanent basis.
+
+e.g.
+
+```Javascript
+
+window.color = "green";
+
+window.mood = "happy";
+
+window.gender = "female";
+
+color; // returns "green"
+
+mood; //returns "happy"
+
+gender; //returns "female"
+
+this.color; //returns green
+
+```
+
+##1.10.02 Scope
+
+An example of scope:
+
+To understand about **window scope** (global) and **function scope** (local)
+
+1- declare a variable, and then a function:
+
+```Javascript
+
+var car = "Ford";
+
+var x = function() {
+  var car = "Subaru";
+  console.log("my car is a " + car);
+  return "the other car is a " + window.car;
+  };
+```
+
+Calling the function x;
+**x();**
+It will return the following **my car is a Subaru "the other car is a Ford"**
+
+Both variables have been outputted.
