@@ -822,8 +822,30 @@ var x = function() {
   };
 ```
 
-Calling the function x;
+Calling the function x:
 **x();**
 It will return the following **my car is a Subaru "the other car is a Ford"**
 
-Both variables have been outputted.
+**Both variables have been outputted, but why?**
+
+Both variables have the same name but they are in different scopes. The first variable **car**(Ford) is at the **global** scope, or **window** scope. Since another variable with the same name is declared inside of the function, JS will not be able to use the global variable because their names are alike and it always picks the one from the closest environment.
+  This conflict is addressed by including the complete path to the global variable *car* in order to tell JS which *car* is meant to be used. Just like packages in Java
+classes with the same name/conflicts.
+
+```Javascript
+
+var car = "Ford";
+
+var x = function() {
+  var car = "Subaru";
+  console.log("my car is a " + car);
+  return "the other car is a " + this.car;
+};
+
+// my car is a Subaru
+// "the other car is a Ford"
+```
+
+In this case,
+  JS **this** always refers to the **owner of the function** being executed. **Who is the owner of this method "x"?** The Global object **window.**
+
