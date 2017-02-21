@@ -849,3 +849,70 @@ var x = function() {
 In this case,
   JS **this** always refers to the **owner of the function** being executed. **Who is the owner of this method "x"?** The Global object **window.**
 
+As we instantiate other objects, they will become owners of methods themselves even if they are under the window scope. This means that **this** will belong to them in that execution environment, and a global variable would not be able to be called __in this__ manner. **Bottom line: avoid using the same name twice**,
+
+##About Security and the Global Object:
+
+In a tabbed browser, each tab contains its own window object. The same happens if we have multiple open windows. For security reasons, the window object is not shared among multiple open windows. This prevents a script from window manipulating/viewing the contents of another window.
+
+Information concerning the DOM/window for the Mozilla browser -> https://developer.mozilla.org/en-US/docs/Web/API/Window
+*including methods related to the window object. DOM.Window.object
+
+##1.11 Primitive and Reference values
+
+How to assign a *property* to a regular string *variable*. **In order to save a property the dev should sent it to the heap as a reference value**
+
+By doing this: Primitive values are saved in the stack while reference values are objects saved in the heap.
+
+1. Declare a value
+
+```Javascript
+var x = "ninja";
+
+// 2. add the property color:
+
+x.color = "green";
+
+x.color;
+
+// returns undefined. It did not save it. In order to save a property the dev
+// should send it to the heap as a reference value
+// in this way
+
+//4. Declare another variable but this time assign it to an object by creating
+//   the expression at the heap ( braces does such a thing )
+
+var y = {};
+
+//5. Now add a property
+
+y.color = "green";
+
+//6. call the property
+
+y.color;
+// console returns "green"
+
+//7. You could also call it with window:
+
+window.y.color;
+// returns "green"
+
+```
+
+
+**This is what occurred**
+
+By pointing a variable to a *reference value*, __the developer is able to add properties to it__. If the variable is deleted i.e is dereferenced, or if the variable is reassigned, the object will automatically be placed on *garbage collection* and print methods available from window, also known as the **Global Object**.
+
+```Javascript
+
+//8. Declare a new variable z and assign it to x:
+
+var z = x;
+
+z;
+// returns "ninja"
+//10 Change x to ronin
+
+
