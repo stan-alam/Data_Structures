@@ -997,25 +997,25 @@ b;
 y;
 //Object {color: "red"}
 y = {"color":"blue"};
-Object {color: "blue"}
+//Object {color: "blue"}
 y;
 //Object {color: "blue"}
 b;
 //Object {color: "red"}
 var c = b;
-undefined
+//undefined
 c;
 //Object {color: "red"}
 b = null;
-null
+//null
 b;
-null
+//null
 c;
 //Object {color: "red"}
 c = null;
-null
+//null
 c;
-null
+//null
 
 ```
 
