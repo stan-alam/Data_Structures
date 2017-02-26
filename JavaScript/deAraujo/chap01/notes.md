@@ -913,6 +913,38 @@ var z = x;
 
 z;
 // returns "ninja"
+
 //10 Change x to ronin
+x = "ronin";
+
+ x;
+//returns "ronin"
+
+//12 Test z;
+
+z;
+//returns "ninja"
+
+```
+**This is what occurred**
+
+If **x** was pointing to an *object* when we assign **z = x;** we tell **z** to *point at* the same object. However, **x** is a **string** variable located in the *stack* because it is a **primitive value**.When assigning other variables to existing primitive values **we are actually COPYING the data** into the new assignment. In the example we **COPIED x** into **z**. THen we changed the value of **x which did not AFFECT the value of z**.
+
+##This is called passing data by value
+**and this is what happens with primitive values**.
+
+Every time a dev assigns a value to another variable it gets __copied__ into the variable itself because in the stack, a variable and its stack data is all **one unit**. __As a helper to remember "passing by value", think of "adding value" when we duplicate (copy) stuff__
+
+##Reference values: the ones on the heap
+
+Things work differently. They are called "reference" and the difference in a second. This is called **passing data by reference** ( **by pointing instead of copying** ).
+
+
+
+
+
+
+
+
 
 
