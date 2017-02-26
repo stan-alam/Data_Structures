@@ -937,7 +937,90 @@ Every time a dev assigns a value to another variable it gets __copied__ into the
 
 ##Reference values: the ones on the heap
 
-Things work differently. They are called "reference" and the difference in a second. This is called **passing data by reference** ( **by pointing instead of copying** ).
+Things work differently. They are called "reference."This is called **passing data by reference** ( **by pointing instead of copying** ).
+
+```Javascript
+
+var y = {};
+
+y.color = "green";
+
+y; // will return {color: "green"}
+
+//assign a new variable b to y:
+
+var b = y;
+
+b; // will return {color: "green"}
+
+// at this point y and b POINT to the same object SOURCE
+
+// add a new color to y:
+
+y.color2 = "red"; //returns {color:"green", color2: "red"}
+
+b; // returns {color: "green", color2: "red"}
+
+```
+
+##Reference variables do not get copied, instead we assign a second variable to them
+
+In this manner the variable acts as a *pointer* and a reference value can have many pointers. If one of the pointers edits the data from the object, the other pointers will reflect the same data from the same object. This saves memory but if we wish to **dereference** the object in order to clear memory, we need to make sure that we __dereference all the variables__ pointing to the object.
+
+```Javascript
+
+//reassign y:
+
+y = {"color": "violet"}
+
+y; // returns {color: "violet"}
+
+b; // returns {color: "green", color2: "red"}
+
+// to dereferenc an object, first, assigning another variable to b:
+
+var c = b;
+
+c; // returns {color: "green", "color:"red"}
+
+//dereference b
+
+b = null;
+y = {"color":"red"};
+//Object {color: "red"}
+b = {};
+//Object {}
+b = y;
+//Object {color: "red"}
+b;
+//Object {color: "red"}
+y;
+//Object {color: "red"}
+y = {"color":"blue"};
+Object {color: "blue"}
+y;
+//Object {color: "blue"}
+b;
+//Object {color: "red"}
+var c = b;
+undefined
+c;
+//Object {color: "red"}
+b = null;
+null
+b;
+null
+c;
+//Object {color: "red"}
+c = null;
+null
+c;
+null
+
+```
+
+
+
 
 
 
