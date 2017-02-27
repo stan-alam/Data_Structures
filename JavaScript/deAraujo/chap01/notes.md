@@ -1042,10 +1042,22 @@ x ( 33 ); // this is the stack, 33 is the argument
 
 In JS, *primitive* data from a variable can be passed *into* a function as a __copy__ via a function **argument** which is given to the a function **parameter**.
 
-The parameter acts as the *interface* between the stack and heap. The data in the variable and the data being passed into the function __become independent__ of each other. **x is pointing to a function, but x(33) is copying the function**. **Although the function resides in the heap**
+The parameter acts as the *interface* between the stack and heap. The data in the variable and the data being passed into the function __become independent__ of each other. **x is pointing to a function, but x(33) is copying the function**. **Although the function resides in the heap**, we are **not** pointing or **passing by reference**, the data is being **cloned**, to be processed by the function. *which is the same thing as passing by value*. i.e *copying data into another variable , or adding value*. If the data in x(33) changes after the first copy, it will not affect the function data that has already been passed in, it will create a new function call.( **a new instance of the function with new data**)
+
+##We are talking about passing in data from the stack to the heap. This is data is copied because there is no physical connection.
+
+##When internal data is being passed into a function from inside the heap itself, i.e. another function, object or array, it is done by reference.not by copying.
+
+##When we pass an object or an array as an argument into a function, we are passing by reference. They are both in the heap, functions objects and arrays.
+
+##Passing by reference means that any change processed inside of the function will be reflected on the original object/array being passed in. This is because we have permission to the function to point at the object or array and modify it as per the function code.
+
+**From another perspective: a function parameter accepts a copy of data coming from a primitive on the stack, but it does not accept a copy of data if the data is coming from the heap**. Instead, it points to the existing data, the one __coming__ from another function, object or array.
+
+It is important to note the difference, because the behavior of data coming from the stack and data coming from within the heap have different outcomes. To *cross the void* from stack to heap, one needs to copy. **To travel from within the heap one only needs to point, as in the case above,** *any change to the pointer will change the original data.*
 
 
-
+~fin~ chap01
 
 
 
