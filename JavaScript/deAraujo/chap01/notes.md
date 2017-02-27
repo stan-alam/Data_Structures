@@ -93,7 +93,7 @@ As for **reference types**, these are **object definitions**. Other languages us
 The Global object is a **mutant** it takes on a different life depending where it used, when in the browser, the gloabl object becomes the **Window Object**
 
 
-```Javascript
+```javascript
 
   var stanObj = new Object();
 
@@ -162,7 +162,7 @@ Because they can be wrapped as objects, properties and methods can be assigned t
 
 ## 1.4 Everything comes from Objects
 
-```Javascript
+```javascript
 
   var z = new Object;
 
@@ -192,7 +192,7 @@ primitives live on the stack
 if a variable such as **b** is attached to an object such as 123 i.e. a number, now the type b *is* a number and the object that b was previously pointing to is by definition no longer viable and it is slated for garbage collection.
 
 
-```Javascript
+```javascript
 
   var x = hat;
 
@@ -219,7 +219,7 @@ When the JS interpreter sees the curly braces it places the object into the heap
 
 e.g
 
-```Javascript
+```javascript
 
   shirt.color;
   // "white"
@@ -236,7 +236,7 @@ e.g
 
 *variable declarations always terminate with a semicolon
 
-```Javascript
+```javascript
 
   var shirt = { "color": "white", "size": "M", "material": "cotton" };
 
@@ -255,7 +255,7 @@ The variable 'shirt' has **properties** and **methods** inherited from the *Obje
 
 Brackets can also be used to access properties of the object.
 
-```Javascript
+```javascript
 
   var shirt = { "color": "white", "size": "M", "material": "cotton" };
 
@@ -281,7 +281,7 @@ New objects can also override the original properties and methods and create the
 
 Newly created properties can be passed on down the pipeline via the object's **prototype** property every time we instanstiate or ( reproduce ) the object. We can also use the prototype to assign (adding) new functionality to the existing object, even to the global **for this particular instance**, anything that is added to the global object is temporary.
 
-```Javascript
+```javascript
 
  var shelf = {"books":20, "CDs": 57, "Magazines": 19 };
 
@@ -315,7 +315,7 @@ shelf;
 **In this way a** *variable* **can point to a collection of data in key-value pairs, making the collection an object.** JS has **object wrapping**
 
 
-```Javascript
+```javascript
 
 var x = "pitbull";
 
@@ -337,7 +337,7 @@ x.substring(0,3);
 ## Assigning functions to a variable
 
 
-```Javascript
+```javascript
 
 var addMe100 = function (param1) {
   var result = param1 + 100;
@@ -365,7 +365,7 @@ In JS **functions are objects** They can be passed around just as any other obje
 **Deference** the variable (i.e. the pointer) in order to remove it from the browser's memory, because **it is a global** variable and it will remain in memory until the program terminates. Deference means to **remove the reference** by making the variable **null.** This will eventually **clear the variable and the function.**
 
 
-```Javascript
+```javascript
 
 var addMe100 = function (param1) {
   var result = param1 + 100;
@@ -393,7 +393,7 @@ The function **addMe100();** is an **anonymous** function. Meaning that the func
 Declarations can have expressions such as:
 
 
-```Javascript
+```javascript
 
 x = 123;
 
@@ -408,7 +408,7 @@ y () {
 At the same time: **variables** can have **functions as expressions:**
 
 
-```Javascript
+```javascript
 
 var z = function() {
 
@@ -423,7 +423,7 @@ var z = function() {
 
 When a variable is declared it is usually **hoisted** or pulled up to the top of the **scope** by the interpreter, which lists all *variable declarations* on the top. Sort of like an index of what's available. **Only the declaration is hoisted not the expression.** This makes a difference when debugging the code and not so much the program at execution.
 
-```Javascript
+```javascript
 
 x = 123;
 
@@ -452,7 +452,7 @@ The function z resembles a variable, i.e. because only the **declaration name is
 
 The other difference between **y** and **z** : i.e. **y** can be called before it is declared in the function script because JS already recognizes **y** as a function and it will look for it. However, in **z**, of we call the function in **z** before the function assignment is written, there may be an error.
 
-```Javascript
+```javascript
 
 var name = "Darrick";
 
@@ -466,7 +466,7 @@ function nameHim() {
 
     is the same as:
 
-```Javascript
+```javascript
 
 var name = "Darrick";
 
@@ -480,7 +480,7 @@ function nameHim() {
 
     which is the same as this:
 
-```Javascript
+```javascript
 
 var name = "Darrick";
 
@@ -665,7 +665,7 @@ By typing in the console **window.x;** the result is still **"stan"** Since **"s
 By typing :
 
 
-```Javascript
+```javascript
 
 var y = function( ) {
   var z = "Darrick";
@@ -705,7 +705,7 @@ var y = function( ) {
   The Global Object becomes the Window Object, when using JS in the browser environment.
 
 
-```Javascript
+```javascript
 
 var myText = "hola, Mundo!";
 
@@ -727,7 +727,7 @@ this.console.log(myText); //returns the same thing as this.myText
 ```
 Now lets look at a function.
 
-```Javascript
+```javascript
 
 var x = function() {
   var text2 = "hola, mundo!";
@@ -749,7 +749,7 @@ window.text2; // also returns undefined.
 
 consider this loop :
 
-```Javascript
+```javascript
 for (var i = 0; i < 5; i++ ) //returns 0,1,2,3,4,
   {
     console.log(i);
@@ -763,7 +763,7 @@ i;
 
 **now coding the same loop inside a function**
 
-```Javascript
+```javascript
 
 var x = function() {
   for (var y = 0; y < 5; y++){
@@ -785,7 +785,7 @@ Properties can be added to the object window, but these will exist on a permanen
 
 e.g.
 
-```Javascript
+```javascript
 
 window.color = "green";
 
@@ -811,7 +811,7 @@ To understand about **window scope** (global) and **function scope** (local)
 
 1- declare a variable, and then a function:
 
-```Javascript
+```javascript
 
 var car = "Ford";
 
@@ -832,7 +832,7 @@ Both variables have the same name but they are in different scopes. The first va
   This conflict is addressed by including the complete path to the global variable *car* in order to tell JS which *car* is meant to be used. Just like packages in Java
 classes with the same name/conflicts.
 
-```Javascript
+```javascript
 
 var car = "Ford";
 
@@ -866,7 +866,7 @@ By doing this: Primitive values are saved in the stack while reference values ar
 
 1. Declare a value
 
-```Javascript
+```javascript
 var x = "ninja";
 
 // 2. add the property color:
@@ -905,7 +905,7 @@ window.y.color;
 
 By pointing a variable to a *reference value*, __the developer is able to add properties to it__. If the variable is deleted i.e is dereferenced, or if the variable is reassigned, the object will automatically be placed on *garbage collection* and print methods available from window, also known as the **Global Object**.
 
-```Javascript
+```javascript
 
 //8. Declare a new variable z and assign it to x:
 
@@ -939,7 +939,7 @@ Every time a dev assigns a value to another variable it gets __copied__ into the
 
 Things work differently. They are called "reference."This is called **passing data by reference** ( **by pointing instead of copying** ).
 
-```Javascript
+```javascript
 
 var y = {};
 
@@ -967,7 +967,7 @@ b; // returns {color: "green", color2: "red"}
 
 In this manner the variable acts as a *pointer* and a reference value can have many pointers. If one of the pointers edits the data from the object, the other pointers will reflect the same data from the same object. This saves memory but if we wish to **dereference** the object in order to clear memory, we need to make sure that we __dereference all the variables__ pointing to the object.
 
-```Javascript
+```javascript
 
 //reassign y:
 
@@ -986,6 +986,9 @@ c; // returns {color: "green", "color:"red"}
 //dereference b
 
 b = null;
+
+c = null;
+
 y = {"color":"red"};
 //Object {color: "red"}
 b = {};
@@ -1019,10 +1022,27 @@ c;
 
 ```
 
+The object has now been sent to **Garbage Collection** and it will be disposed of because there is no reference pointing to it from the **stack**. It is now deleted when the js interpreter does another memory sweep.
 
+##1.11.2 How to pass in data from the stack to the heap
 
+One of the ways to pass data from the stack to heap is by *argument* in a function call.
 
+```javascript
 
+var x = function ( num ) {
+  return num + 2;
+};
+
+x ( 33 ); // this is the stack, 33 is the argument
+
+//33 gets copied from the argument in the function call as a parameter into num in the function
+
+```
+
+In JS, *primitive* data from a variable can be passed *into* a function as a __copy__ via a function **argument** which is given to the a function **parameter**.
+
+The parameter acts as the *interface* between the stack and heap. The data in the variable and the data being passed into the function __become independent__ of each other. **x is pointing to a function, but x(33) is copying the function**. **Although the function resides in the heap**
 
 
 
