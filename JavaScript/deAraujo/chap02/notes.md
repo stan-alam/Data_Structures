@@ -1,0 +1,45 @@
+## chap02
+
+Chap02 will cover methods and object properties.
+
+##2.1 Strings as Objects in JS
+
+Strings are immutable and they reside in the Stack. If the dev edits a string, the variable gets replaced by another string variable of a shorter to a longer length and with the same name. The previous string is destroyed, and not editable.
+
+**String Object** - JS calls the String object at will and wraps strings into objects when it needs to do so.
+
+**All methods and properties of the String object are automatically available to primitive values. There is no need to instantiate an object**.
+
+**Literal** - refers to a character, word or phrase within quote, e.g. "apples and oranges." A **String Literal** is composed of *zero* or more characters enclosed in single or double quotes. Although there is no difference between single or double quotes in JS. Double Quotes are mandatory in JSON.
+
+**method** is what programmers call a __piece of functionality__ that acts __on behalf__ of an object. A method is normally a function, or a collection of functions to accomplish __one__ specific task. ??A method is derived from a class?? while a function is not, both have return types. A constructor is a method without a return type, while a procedure is a function without a return type.
+
+THe literal in JS is normally a primitive type. When a *method* is called on a string literal, the string is temproarily and automatically **wrapped** into an object in order to process the call.
+
+
+When a string primitive is wrapped around a String object, it automatically inherits several (a) Properties, and (b) methods.
+
+Take a look see:
+
+(a) **String properties** such as length, prototype, constructor:
+length:
+
+```javascript
+
+var x = "bananas";
+
+x.length;
+// returns 7;
+
+```
+The prototype property is used **add properties and methods to an existing object**. Add a property to the String object to see if "x" inherits from the object :
+
+```javascript
+
+var x = "bananas";
+
+String.prototype.feelings = "like bananas!"; //make notice of the capitalized S in String
+
+```
+
+In other words: "Mr. String, please *prototype* ( verb meaning create as prototype ) the property "feelings" with the value "like bananas!" This case view the "see" property as a the key-value pair.
