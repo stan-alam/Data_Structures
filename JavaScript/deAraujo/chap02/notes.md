@@ -54,7 +54,7 @@ x.feelings
 // because feelings is the location where the property value resides
 
 
-'''
+```
 
 The property feelings became part of the string x and it can be called by using the **Dot** or **bracket** notation. x is still a primitive and you can confirm it by calling **typeof** on it, which returns __lower cased__ string type, and not the *object*.
 
