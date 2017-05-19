@@ -14,7 +14,7 @@ Strings are immutable and they reside in the Stack. If the dev edits a string, t
 
 **method** is what programmers call a __piece of functionality__ that acts __on behalf__ of an object. A method is normally a function, or a collection of functions to accomplish __one__ specific task. ??A method is derived from a class?? while a function is not, both have return types. A constructor is a method without a return type, while a procedure is a function without a return type.
 
-THe literal in JS is normally a primitive type. When a *method* is called on a string literal, the string is temproarily and automatically **wrapped** into an object in order to process the call.
+THe literal in JS is normally a primitive type. When a *method* is called on a string literal, the string is temporarily and automatically **wrapped** into an object in order to process the call.
 
 
 When a string primitive is wrapped around a String object, it automatically inherits several (a) Properties, and (b) methods.
@@ -43,3 +43,66 @@ String.prototype.feelings = "like bananas!"; //make notice of the capitalized S 
 ```
 
 In other words: "Mr. String, please *prototype* ( verb meaning create as prototype ) the property "feelings" with the value "like bananas!" This case view the "see" property as a the key-value pair.
+
+**Think of the the** *prototype command* as adding something new to a menu of tools. Think of this menu as a *prototype*, the verb allowing the addition of new properties and methods is also the verb *prototype*.
+
+```javascript
+
+x.feelings
+//returns "love bananas"
+// can also be written as x["feelings"];
+// because feelings is the location where the property value resides
+
+
+```
+
+The property feelings became part of the string x and it can be called by using the **Dot** or **bracket** notation. x is still a primitive and you can confirm it by calling **typeof** on it, which returns __lower cased__ string type, and not the *object*.
+
+The syntax property named "feelings" which was prototyped (created) on the **String object prototype** (menu) It is now part of __list of properties__ available to __all__ string primitives during *this* particular **execution context**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

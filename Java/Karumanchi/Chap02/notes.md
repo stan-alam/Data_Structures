@@ -11,4 +11,8 @@ Recursion is a useful technique borrowed from mathematics . Recursive code is ge
      2.4  What is the format of a recursive function
 
 
- A recursive function performs a task in part by calling itself to perform the subtasks. At some point, the function encounters a subtask that it can perform without calling itself
+ A recursive function performs a task in part by calling itself to perform the subtasks. At some point, the function encounters a subtask that it can perform without calling itself. 
+
+ *Base case* is when the function does not reoccur
+
+ *ecursive* is when a function calls calls itself to perform a subtask
