@@ -21,6 +21,8 @@ This classless model of language, also known as instance-based or **prototyped o
 Although it looks like a class based language, it is not. *familiarity takes off the edge of admiration*
 Admire JS for what it is not by what it looks like.
 
+    https://github.com/stan-alam/NodeJS/blob/develop/craftsman/chap04/notes.md
+
 
 #1.2 The Memory Concept
 
