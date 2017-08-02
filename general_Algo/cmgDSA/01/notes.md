@@ -58,10 +58,21 @@ When creating an array the machine allocates specific memory address and that is
 
 WHen searching for a value in an array the machine must perform a step by step operation. It begins with index.[0] If index.[0] does not contain the value, it will check the next index value or index.[1] and so on.. until it find the matching value. 
 
-**Linear Search** : When the machine checks each cell one at a time.
+**Linear Search** : When the machine checks each cell one at a time. **When there is N cells in an array, there will be N steps**
 
 An array with an index of 500, and where the value that the machine is searching is the last one, then it will take 500 steps, or index.[499]
 
+# Insertion  :
+
+**The efficiency of inserting a new piece of data inside an array depends on WHERE inside the array you would like to insert it**.
+
+**Inserting into an array at the end of the array is no biggie.** However, if new data is inserted to the **middle** or the **beginning**
+
+e.g to insert a new value into index.[2], in an array that is index.[5], new memory address has to be allocated at the end of the array, and then the value within the index.[5] moves to index.[6], **step{1}** the value then of index.[4] **step{2}** is moved to [5], [4] is then replaced with the value in [3] **step{3}**, value in [2] is moved to [3] **step{4}** and then finally in the index.[2] the new value will be inserted.
+
+**all together 4 steps had to be performed for this particular INSERT operation**
+
+You can see why the worst case scenario would be to insert at the beginning of the array.
 
 
 
