@@ -2,7 +2,7 @@
 
 Chap02 will cover methods and object properties.
 
-##2.1 Strings as Objects in JS
+## 2.1 Strings as Objects in JS
 
 Strings are immutable and they reside in the Stack. If the dev edits a string, the variable gets replaced by another string variable of a shorter to a longer length and with the same name. The previous string is destroyed, and not editable.
 

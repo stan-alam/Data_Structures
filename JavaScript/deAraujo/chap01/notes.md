@@ -21,8 +21,10 @@ This classless model of language, also known as instance-based or **prototyped o
 Although it looks like a class based language, it is not. *familiarity takes off the edge of admiration*
 Admire JS for what it is not by what it looks like.
 
+    https://github.com/stan-alam/NodeJS/blob/develop/craftsman/chap04/notes.md
 
-#1.2 The Memory Concept
+
+# 1.2 The Memory Concept
 
 Memory management or the act of *managing computer memory* is defined as a way to dynamically allocate portions of memory to a program **at** its request. It is also the act of freeing memory for reuse when data is no longer needed ( in JS this is done by the Web Browser, e.g. the V8 engine )
 
@@ -82,7 +84,7 @@ If a string expands, **a new string replaces the old string** and the **old data
 
 
 
-##1.3 Variables vs Reference Types
+## 1.3 Variables vs Reference Types
 
 **Numbers, Strings, Booleans** => JavaScript primitives.
 
@@ -129,7 +131,7 @@ Once *declared* as an object, the new object *stan* "inherits by pointing to" **
      chain. Water is the prototype chain in which properties/methods float, making themselves avialable to objects
      down the pipeline.
 
-#2 Object Methods:
+# 2 Object Methods:
 
 As for **inherited methods** e.g. stan inherits by "pointing to" **methods** from its parent object, the "Object" object, such as:
 
@@ -147,7 +149,7 @@ d) **toString()** Every object has a toString() method. It is automatically call
 e) **valueOf()** JS returns the primitive value of a specified object. stanObj.valueOf(); may return an **Array, Boolean, Data, Function, Number, Object, String.** JS uses this method internally but can be called on purpose. Objects such as Math and Error do not have a built-in valueOf method.
 
 
-##Back to Properties
+## Back to Properties
 
          A property of an object can be explained as a variable attached to the new object
          * these properties will be overwritten when creating a new object.
@@ -270,7 +272,7 @@ Brackets can also be used to access properties of the object.
 
 brackets allow to use numeric keys, while dot syntax does not allow the use of numbers.
 
-##Objects##
+## Objects
 
 Think of variables as symbols that point to data in the stack. The *stack* points to data in the *heap*; the key-value pairs are located in the heap, bound by a pointer in the stack. If no pointer exists, then no key value pairs will exist. Just as a coin, one side does not exist without the other. **An unassigned variable has a value of undefined but still exists** By assigning the variable to **null** will clear it from working memory.
 To check if a variable is assigned or not use **typeof**
@@ -279,7 +281,7 @@ Think of JS as a collection of objects inheriting functionality from their "pare
 
 New objects can also override the original properties and methods and create their own.
 
-Newly created properties can be passed on down the pipeline via the object's **prototype** property every time we instanstiate or ( reproduce ) the object. We can also use the prototype to assign (adding) new functionality to the existing object, even to the global **for this particular instance**, anything that is added to the global object is temporary.
+Newly created properties can be passed on down the pipeline via the object's **prototype** property every time we instantiate or ( reproduce ) the object. We can also use the prototype to assign (adding) new functionality to the existing object, even to the global **for this particular instance**, anything that is added to the global object is temporary.
 
 ```javascript
 
@@ -378,7 +380,7 @@ addMe100 = null;
 
 Using typeof for checking the *type* of the addMe100, typeof method will return an empty *object*, calling the function will result in the JS interpreter displaying 'Uncaught TypeError: addMe100 is not a function at anonymous:1:1'
 
-##1.6 Named Functions vs Anonymous Functions
+## 1.6 Named Functions vs Anonymous Functions
 
 The function **addMe100();** is an **anonymous** function. Meaning that the function is assigned to a **variable declaration** and it is an **expression** ( part of a program) of the *declared* variable.
 
@@ -498,7 +500,7 @@ function nameHim() {
 
 Besides this using **anonymous** functions is a powerful technique, if implemented wisely, JQuery makes a lot of use of said functions.
 
-#Review Chapter one, 1.7
+# Review Chapter one, 1.7
 
   * JavaScript is a **prototype-based language**
 
@@ -634,7 +636,7 @@ BOM is the wrapper (non standardized )all other objects are standardized. HEAD a
 |                                                                                                                                               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+
 ```
-##Upon opening a new window, the window belongs to the browser.The object is the window itself. In window.open("url").open is a method from the BOM
+## Upon opening a new window, the window belongs to the browser.The object is the window itself. In window.open("url").open is a method from the BOM
 
 ## 1.8.4 What is a property?
 
@@ -674,7 +676,7 @@ var y = function( ) {
 ```
 **z** is a property of function **y**, not of **window.** Function y is still a function of the *global object(window).*
 
-#Review Chapter one, 1.9
+# Review Chapter one, 1.9
 
    * Reference values reside in the Heap.
 
@@ -700,7 +702,7 @@ var y = function( ) {
    * Although in the global scope the keyword "var" could be omitted because the variable is available down the scope chain, it is good practice to always write it in when declaring a variable in order to prevent confusion by JS interpreter. **var binds the variable to its immediate scope.** In the latest ECMA5, omitting var will throw an error.
 
 
-#1.10 An intro the Window Object
+# 1.10 An intro the Window Object
 
   The Global Object becomes the Window Object, when using JS in the browser environment.
 
@@ -803,7 +805,7 @@ this.color; //returns green
 
 ```
 
-##1.10.02 Scope
+## 1.10.02 Scope
 
 An example of scope:
 
@@ -851,7 +853,7 @@ In this case,
 
 As we instantiate other objects, they will become owners of methods themselves even if they are under the window scope. This means that **this** will belong to them in that execution environment, and a global variable would not be able to be called __in this__ manner. **Bottom line: avoid using the same name twice**,
 
-##About Security and the Global Object:
+## About Security and the Global Object:
 
 In a tabbed browser, each tab contains its own window object. The same happens if we have multiple open windows. For security reasons, the window object is not shared among multiple open windows. This prevents a script from window manipulating/viewing the contents of another window.
 
@@ -930,12 +932,12 @@ z;
 
 If **x** was pointing to an *object* when we assign **z = x;** we tell **z** to *point at* the same object. However, **x** is a **string** variable located in the *stack* because it is a **primitive value**.When assigning other variables to existing primitive values **we are actually COPYING the data** into the new assignment. In the example we **COPIED x** into **z**. THen we changed the value of **x which did not AFFECT the value of z**.
 
-##This is called passing data by value
+## This is called passing data by value
 **and this is what happens with primitive values**.
 
 Every time a dev assigns a value to another variable it gets __copied__ into the variable itself because in the stack, a variable and its stack data is all **one unit**. __As a helper to remember "passing by value", think of "adding value" when we duplicate (copy) stuff__
 
-##Reference values: the ones on the heap
+## Reference values: the ones on the heap
 
 Things work differently. They are called "reference."This is called **passing data by reference** ( **by pointing instead of copying** ).
 
@@ -963,7 +965,7 @@ b; // returns {color: "green", color2: "red"}
 
 ```
 
-##Reference variables do not get copied, instead we assign a second variable to them
+## Reference variables do not get copied, instead we assign a second variable to them
 
 In this manner the variable acts as a *pointer* and a reference value can have many pointers. If one of the pointers edits the data from the object, the other pointers will reflect the same data from the same object. This saves memory but if we wish to **dereference** the object in order to clear memory, we need to make sure that we __dereference all the variables__ pointing to the object.
 
@@ -1024,7 +1026,7 @@ c;
 
 The object has now been sent to **Garbage Collection** and it will be disposed of because there is no reference pointing to it from the **stack**. It is now deleted when the js interpreter does another memory sweep.
 
-##1.11.2 How to pass in data from the stack to the heap
+## 1.11.2 How to pass in data from the stack to the heap
 
 One of the ways to pass data from the stack to heap is by *argument* in a function call.
 
@@ -1044,13 +1046,13 @@ In JS, *primitive* data from a variable can be passed *into* a function as a __c
 
 The parameter acts as the *interface* between the stack and heap. The data in the variable and the data being passed into the function __become independent__ of each other. **x is pointing to a function, but x(33) is copying the function**. **Although the function resides in the heap**, we are **not** pointing or **passing by reference**, the data is being **cloned**, to be processed by the function. *which is the same thing as passing by value*. i.e *copying data into another variable , or adding value*. If the data in x(33) changes after the first copy, it will not affect the function data that has already been passed in, it will create a new function call.( **a new instance of the function with new data**)
 
-##We are talking about passing in data from the stack to the heap. This is data is copied because there is no physical connection.
+## We are talking about passing in data from the stack to the heap. This is data is copied because there is no physical connection.
 
-##When internal data is being passed into a function from inside the heap itself, i.e. another function, object or array, it is done by reference.not by copying.
+## When internal data is being passed into a function from inside the heap itself, i.e. another function, object or array, it is done by reference.not by copying.
 
-##When we pass an object or an array as an argument into a function, we are passing by reference. They are both in the heap, functions objects and arrays.
+## When we pass an object or an array as an argument into a function, we are passing by reference. They are both in the heap, functions objects and arrays.
 
-##Passing by reference means that any change processed inside of the function will be reflected on the original object/array being passed in. This is because we have permission to the function to point at the object or array and modify it as per the function code.
+## Passing by reference means that any change processed inside of the function will be reflected on the original object/array being passed in. This is because we have permission to the function to point at the object or array and modify it as per the function code.
 
 **From another perspective: a function parameter accepts a copy of data coming from a primitive on the stack, but it does not accept a copy of data if the data is coming from the heap**. Instead, it points to the existing data, the one __coming__ from another function, object or array.
 
