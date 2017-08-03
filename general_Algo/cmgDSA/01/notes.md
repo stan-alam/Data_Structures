@@ -19,19 +19,28 @@ the **index** of an array is the number that identifies where the piece of data 
 
 There are four operations used on arrays :
 
-	* READ : reading refers to looking something up from a particular
-	spot within the data structure. Meaning looking up the value at
+**READ**
+
+    reading refers to looking something up from a particular
+    spot within the data structure. Meaning looking up the value at
 	the particular index. 
 
-	* SEARCH : Searching refers to looking for a particular value within
+
+**SEARCH**
+
+    Searching refers to looking for a particular value within
 	data structure. With an array, this would mean looking to see if a 
 	particular value exists within the array, and at which index it is at.
 
-	* INSERT : Insertion refers to adding another value to a data structure.
+**INSERT** 
+
+    Insertion refers to adding another value to a data structure.
 	With an array, this would mean adding a new value to an additional slot
 	within the array. 
 
-	* DELETE : Deletion refers to removing a value from the data structure. 
+**DELETE**
+
+    Deletion refers to removing a value from the data structure. 
 	For an array this would mean removing on of the values of the array. 
 
 ## When measuring how "fast" an operation takes, we do not refer to how fast the operation takes in terms of time, but instead in how many steps it takes.
@@ -73,6 +82,42 @@ e.g to insert a new value into index.[2], in an array that is index.[5], new mem
 **all together 4 steps had to be performed for this particular INSERT operation**
 
 You can see why the worst case scenario would be to insert at the beginning of the array.
+
+# Deletion :
+
+**Deletion from an array is the process of eliminating the value at a particular index.**
+
+It takes on step to delete a value from within an index of array. However, now there is an empty index value in the array. To resolve this the machine shifts the value to the right of the deleted value into the value that was deleted. This will be one step for the deletion and then the amount of cells are in the array to the right of the deleted value.
+
+worse case scenario same as Inserting at the very beginning of the array.
+
+**for an array of 500 elements, one step is for deleting the first element, and then 499 steps shifting the remaining data**
+
+**it is important to choose the correct data structure it will have serious ramifications as to how performant your code is.**
+
+-------------------------------------------------------------------------------
+
+# SETS Data Structure :
+
+**the set is another data structure of which does not allow duplicate values**
+
+The **array based set** is just the same as an array -- it is a simple list of values. The difference being that it does not allow for duplicate values.
+
+["a","b","c"] and you try to add another b, you will not be able to do so.
+
+**sets are useful to avoid duplicate data**
+
+**this constraint causes the set to have a different efficiency for one of those four primary operations.**
+
+**There is no difference in between READING from a SET and an array**
+takes only one step
+
+**SEARCHING a SET is also no different than SEARCHING in an array**
+
+## Insertion, however, is where these two data structures diverge.
+
+## To insert into a set, the machine must first determine if this value does not already exist!
+
 
 
 
