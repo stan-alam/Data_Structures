@@ -110,13 +110,32 @@ The **array based set** is just the same as an array -- it is a simple list of v
 **this constraint causes the set to have a different efficiency for one of those four primary operations.**
 
 **There is no difference in between READING from a SET and an array**
-takes only one step
+*takes only one step*
 
 **SEARCHING a SET is also no different than SEARCHING in an array**
 
 ## Insertion, however, is where these two data structures diverge.
 
-## To insert into a set, the machine must first determine if this value does not already exist!
+## To insert into a set, the machine must first determine if this value does not already exist in the set. 
+
+**So every insert requires a search**
+
+Step 1 : Search index.[0] for "apple", doesn't find in index.[0], search next index.[1], then so on ...
+
+Ones it reaches the index.[N] where N is the last value holder, and it does not find the "apple" value... And then it will enter "apple" into the last index.[N]
+which would be the last step.
+
+# Best-case scenario will take N + 1 steps for N elements. N steps for the search and finally 1 more step to make the insert
+
+# Worst-case scenario the value needs to be placed in the first index.[0]
+
+**this would mean the whole index has to scanned for a duplicate, and then starting from the end of the array index.[N], all values have to be shifted accordingly to accommodate the new value in the first index.[0].**
+
+~fin~
+
+
+
+
 
 
 
