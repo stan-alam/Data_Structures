@@ -125,13 +125,13 @@ Step 1 : Search index.[0] for "apple", doesn't find in index.[0], search next in
 Ones it reaches the index.[N] where N is the last value holder, and it does not find the "apple" value... And then it will enter "apple" into the last index.[N]
 which would be the last step.
 
-# Best-case scenario will take N + 1 steps for N elements. N steps for the search and finally 1 more step to make the insert
+## Best-case scenario will take N + 1 steps for N elements. N steps for the search and finally 1 more step to make the insert
 
-# Worst-case scenario the value needs to be placed in the first index.[0]
+## Worst-case scenario the value needs to be placed in the first index.[0]
 
 **this would mean the whole index has to scanned for a duplicate, and then starting from the end of the array index.[N], all values have to be shifted accordingly to accommodate the new value in the first index.[0].**
 
-~fin~
+~ fin ~
 
 
 
