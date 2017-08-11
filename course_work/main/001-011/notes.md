@@ -113,7 +113,7 @@ When pop make sure to check that the stack is in underflow state, last element g
  }Stack;  //this is the definition of the structure type stack this way we can create as many stacks as we need
 
  //prototype declarations
-
+ void init(Stack *)
  void push(Stack *, int);  //the push function should return nothing, it should receive the stack pointer, the address to //the stack object to which it should push into
 
  int pop(Stack *); // here you can see that the pop function will return the stack address where the element is being 
@@ -156,14 +156,20 @@ int pop(Stack *sp) {
 
 int main() {
 	
-	Stack s1, s2; //these are two stack objects both contain an array
-	s1.top = -1;
-	s2.top = -2;
+	Stack s1, s2;
+	init(&s1);
+	init(&s2);
+	push(&s1, 100);
+	push(&s1, 200);
+
+	push(&s2, 10); 
+	push(&s2, 20);
+
 
 	return 0;
 }
 
-
+// this stack is a fixed stack, size will always be 10;
 
 ```
 
