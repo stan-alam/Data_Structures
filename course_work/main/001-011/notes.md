@@ -83,6 +83,40 @@ THe terminal remembers the commands : When you run a command, the command is sto
 
 ---------------------------------
 
+# 04
+
+## Implementation of Stack using 1 dimensional array 
+
+building a stack using one dimensional array -- to keep track of the last element is inserted we need to create variable.
+
+Anytime you push an element it will go the top. Before adding another element to the top we have to make sure that the array is not in overflow. index.[5] contain 0, 1, 2, 3, 4, 
+
+if we use the push operation on index.[4] where index.[4] contains an element. e.g. (n - 1)
+
+When pop make sure to check that the stack is in underflow state, last element gets deleted at the stack.
+
+---------------------------------------
+
+# 05
+
+## Push Pop operation in C
+
+
+```c
+
+ #include <stdio.h> 
+ #define SIZE 10
+
+ typedef struct {
+ 	int item[SIZE];
+ 	int top; 	
+ }Stack;
+
+ //prototype 
+
+```
+
+
 
 
 
