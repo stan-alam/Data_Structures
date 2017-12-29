@@ -1,4 +1,29 @@
 ## JS Functions and Arguments as Objects
+```text
+
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░▄▄▄▄▄▄▄░░░░░░░░░
+░░░░░░░░░▄▀▀▀░░░░░░░▀▄░░░░░░░
+░░░░░░░▄▀░░░░░░░░░░░░▀▄░░░░░░
+░░░░░░▄▀░░░░░░░░░░▄▀▀▄▀▄░░░░░
+░░░░▄▀░░░░░░░░░░▄▀░░██▄▀▄░░░░
+░░░▄▀░░▄▀▀▀▄░░░░█░░░▀▀░█▀▄░░░
+░░░█░░█▄▄░░░█░░░▀▄░░░░░▐░█░░░
+░░▐▌░░█▀▀░░▄▀░░░░░▀▄▄▄▄▀░░█░░
+░░▐▌░░█░░░▄▀░░░░░░░░░░░░░░█░░
+░░▐▌░░░▀▀▀░░░░░░░░░░░░░░░░▐▌░
+░░▐▌░░░░░░░░░░░░░░░▄░░░░░░▐▌░
+░░▐▌░░░░░░░░░▄░░░░░█░░░░░░▐▌░
+░░░█░░░░░░░░░▀█▄░░▄█░░░░░░▐▌░
+░░░▐▌░░░░░░░░░░▀▀▀▀░░░░░░░▐▌░
+░░░░█░░░░░░░░░░░░░░░░░░░░░█░░
+░░░░▐▌▀▄░░░░░░░░░░░░░░░░░▐▌░░
+░░░░░█░░▀░░░░░░░░░░░░░░░░▀░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+```
+
+ ⭐️
 
 Arguments
 
@@ -14,7 +39,7 @@ It can also **be called by any subfunction** i.e after proper binding is applied
 **argument parameters is declared in individually within the function parentheses. There is no formalization of the parameter's declaration**
 In order to pass data into the function. It depends on the code inside the function asks for the particular input data.
 
-e.g.
+e.g. 💜
 
 ```javascript
                     // no formal data going in to the function
@@ -31,6 +56,7 @@ var x = function () {
 x("hamster", "velociraptor"); // returns all arguments passed in: ["hamster", "velociraptor"]
 
 ```
+🐍
 
 2. You can call the function with *more* Values
 
@@ -44,7 +70,7 @@ Although *arguments* **looks like an array** it is **NOT AN ARRAY** It can be co
 and once it is converted to an array, you can use its data for further processing.
 
 e.g. **This will multiply all the arguments by using the array reduce() function.method**
-
+🍖
 ```javascript
 
 var x = function() { // see there are no formalized parameters
@@ -102,4 +128,161 @@ On line 89 : Just as previously we request the **prototype of the Array's slice 
 
 On line 93 : We call the function **a()** which returns an array of the string ... which is expressed on line 95
 
-### Now Back to the main discussion 
+### Now Back to the main discussion ...
+
+### Why would you formally include parameters in a function, when in fact you can pass in any arguments without formally using parameters?
+
+When we include parameters, you will be establishing a *sequence* of items. These items will be sent to the function, which allows for specific processing of each argument.
+
+```javascript
+
+var nirv = function (x,y) /*here is the data going into the function */ {  
+  return "x= " + x + ", y = "+ y;
+  //the return is the data out, duh!
+};
+//here is what the output would be for sending 2, and 11 to the nirv function`
+//nirv(2,11);
+//"x= 2, y = 11"
+
+```
+👀
+
+If you want you can also send in three parameters... although, that last third parameter will be dismissed. The return statement in the nirv function doesn't have anyway to "grab"
+or store it, i.e. store it in memory for processing. If you do not include a parameter then the result will be undefined for the count of that parameter. e.g. Lets say your call to the function looks like this ...
+
+```javascript
+
+//console
+//>nirv(2);
+// the last parameter for the y variable is NOT sent tot he function for processing, although the function was wait for two parameters.
+
+```
+
+**You can plug 255 parameters into javascript's parameter acceptor**
+
+By adding **arguments** as a return value, you will allow the function nirv() to accept up to 255 values in which it will be able to return to console.
+
+🐵
+
+```javascript
+
+
+var nirv = function (x,y) /*here is the data going into the function */ {  
+  return arguments;
+
+};
+
+/* this is the console output
+nirv(2,3,5,43,3);
+Arguments(5) [2, 3, 5, 43, 3, callee: ƒ, Symbol(Symbol.iterator): ƒ]0: 21: 32: 53: 434: 3callee: ƒ ()length: 5Symbol(Symbol.iterator): ƒ values()__proto__: Object
+*/
+
+```
+
+Another example, accessing unlimited arguments with a **for loop** targeting the length of the argument. 💎 LIKE SO ....
+
+```javascript
+
+var ana = function () {
+  for(var i = 0; i < arguments.length; i++) {
+    console.log(arguments[i] + " is a banana");
+  }
+};
+
+/* console output
+ana("raptor","gerbil","T-rex", "ophthalmosaurus");
+VM23094:3 raptor is a banana
+VM23094:3 gerbil is a banana
+VM23094:3 T-rex is a banana
+VM23094:3 ophthalmosaurus is a banana
+*/
+
+```
+
+**You would be using formal parameters whenever you are using specific sequence of inputs** If you wish to **be creative**  🐸
+
+
+# Nested Functions!... yay!
+
+### Nested functions are functions inside of functions!
+These inner functions have access to all the data of the outer functions! This is some powerful "stuff", here! These are some important characteristics of inner functions and outer functions!!!!
+
+# Closures!
+
+1. Say there is an array that is assigned to a variable named "**bobMarley**":
+
+```javascript
+
+var bobMarley = [4,5,6,7,8,9];
+
+```
+
+2. Now we assign to **bobMarley** to another variable let's call it "**whalers**", and then to top it off.. we assign **whalers** to **legend** :
+
+```javascript
+
+var whalers = bobMarley;
+
+var legend = whalers;
+
+
+```
+Here we created three different variables that are pointed to the heap. We can reassign the variable 'bobMarley' to null, but the array will still exist under the names of 'legend', and 'whalers.'
+
+**as long as the array is still has some variable pointing to it... that array will not be garbage collected.**
+
+```js
+/*
+var bobMarley = [4,5,6,7,8,9];
+undefined
+var whalers = bobMarley;
+
+var legend = whalers;
+undefined
+var bobMarley = null;          <--------------- notice how we set bobMarley to null
+undefined
+whalers;                       <=============== and here whalers still holds the values that once belonged to bobMarley
+(6) [4, 5, 6, 7, 8, 9]
+legend;                        <~~~~~~~~~~~~~~~~ same here with the variable 'legend'
+(6) [4, 5, 6, 7, 8, 9]
+*/
+
+```
+👄
+
+# The CLOSURE principle
+
+          Knowledge is closed under entailment. Entailment means logical consequence. If 'A' knows 'B'
+          and 'B' entails 'C', then A knows C.
+
+
+If the array bobMarley was set to null, then the array will be marked for garbage collection. **yet the variables "whalers" and "legend" have closure on the array. Thisway the array is able to survive the garbage collection of its original pointer ... the variable known as 'bobMarley.'** *essentially the array lives on in the whalers and legend variable(s)*
+
+```text
+
+::::    ::::   :::::::: :::::::::     :::     ::::::::: :::::::::::      :::       ::::::::                            ::::::::  :::    :::  ::::::::   :::::::: :::::::::::
++:+:+: :+:+:+ :+:    :+:     :+:    :+: :+:   :+:    :+:    :+:          :+       :+:    :+:                          :+:    :+: :+:    :+: :+:    :+: :+:    :+:    :+:     
++:+ +:+:+ +:+ +:+    +:+    +:+    +:+   +:+  +:+    +:+    +:+                   +:+                                 +:+        +:+    +:+ +:+    +:+ +:+           +:+     
++#+  +:+  +#+ +#+    +:+   +#+    +#++:++#++: +#++:++#:     +#+                   +#++:++#++                          :#:        +#++:++#++ +#+    +:+ +#++:++#++    +#+     
++#+       +#+ +#+    +#+  +#+     +#+     +#+ +#+    +#+    +#+                          +#+                          +#+   +#+# +#+    +#+ +#+    +#+        +#+    +#+     
+#+#       #+# #+#    #+# #+#      #+#     #+# #+#    #+#    #+#                   #+#    #+#                          #+#    #+# #+#    #+# #+#    #+# #+#    #+#    #+#     
+###       ###  ######## ######### ###     ### ###    ###    ###                    ########                            ########  ###    ###  ########   ########     ###     *the
+
+hottest band on the Internet
+
+
+
+
+_   .-')                   .-') _  ('-.     _  .-')   .-') _                     .-')                            ('-. .-.               .-')    .-') _    
+( '.( OO )_                (  OO) )( OO ).-.( \( -O ) (  OO) )        ,--.       ( OO ).                         ( OO )  /              ( OO ). (  OO) )   
+,--.   ,--.).-'),-----. ,(_)----. / . --. / ,------. /     '._       \  |      (_)---\_)              ,----.    ,--. ,--. .-'),-----. (_)---\_)/     '._  
+|   `.'   |( OO'  .-.  '|       | | \-.  \  |   /`. '|'--...__)       `-'      /    _ |              '  .-./-') |  | |  |( OO'  .-.  '/    _ | |'--...__)
+|         |/   |  | |  |'--.   /.-'-'  |  | |  /  | |'--.  .--'                \  :` `.              |  |_( O- )|   .|  |/   |  | |  |\  :` `. '--.  .--'
+|  |'.'|  |\_) |  |\|  |(_/   /  \| |_.'  | |  |_.' |   |  |                    '..`''.)             |  | .--, \|       |\_) |  |\|  | '..`''.)   |  |    
+|  |   |  |  \ |  | |  | /   /___ |  .-.  | |  .  '.'   |  |                   .-._)   \            (|  | '. (_/|  .-.  |  \ |  | |  |.-._)   \   |  |    
+|  |   |  |   `'  '-'  '|        ||  | |  | |  |\  \    |  |                   \       /             |  '--'  | |  | |  |   `'  '-'  '\       /   |  |    
+`--'   `--'     `-----' `--------'`--' `--' `--' '--'   `--'                    `-----'               `------'  `--' `--'     `-----'  `-----'    `--'    *the hottest band on the
+
+Internet
+
+```
