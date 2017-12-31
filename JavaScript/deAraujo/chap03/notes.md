@@ -258,6 +258,11 @@ legend;                        <~~~~~~~~~~~~~~~~ same here with the variable 'le
 
 If the array bobMarley was set to null, then the array will be marked for garbage collection. **yet the variables "whalers" and "legend" have closure on the array. Thisway the array is able to survive the garbage collection of its original pointer ... the variable known as 'bobMarley.'** *essentially the array lives on in the whalers and legend variable(s)*
 
+<a>
+  <img src="https://github.com/stan-alam/Data_Structures/blob/develop/JavaScript/deAraujo/chap03/svg_files/kiteJSobj.svg" width="80%" height="80%">
+</a>
+
+
 ```text
 
 ::::    ::::   :::::::: :::::::::     :::     ::::::::: :::::::::::      :::       ::::::::                            ::::::::  :::    :::  ::::::::   :::::::: :::::::::::
