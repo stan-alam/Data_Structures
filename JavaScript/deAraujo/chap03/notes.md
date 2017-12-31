@@ -254,6 +254,10 @@ legend;                        <~~~~~~~~~~~~~~~~ same here with the variable 'le
   <img src="https://github.com/stan-alam/Data_Structures/blob/develop/JavaScript/deAraujo/chap03/svg_files/kiteJSobj.svg" width="50%" height="50%">
 </a>
 
+**Above diagram**
+Sam and Molly are holding the same  kite. While at Execution Time: Sam lets go of the kite(he's 'swaze') but the kite remains in place because Moly is still holding it. 
+
+The kite is secure due to the closure principle. If 'A'knows 'B' and 'B' knows 'C' then A must know 'C'
 
 # The CLOSURE principle
 
