@@ -39,7 +39,9 @@ It can also **be called by any subfunction** i.e after proper binding is applied
 **argument parameters is declared in individually within the function parentheses. There is no formalization of the parameter's declaration**
 In order to pass data into the function. It depends on the code inside the function asks for the particular input data.
 
-e.g. 💜
+💜
+
+e.g.
 
 ```javascript
                     // no formal data going in to the function
@@ -255,7 +257,7 @@ legend;                        <~~~~~~~~~~~~~~~~ same here with the variable 'le
 </a>
 
 **Above diagram**
-Sam and Molly are holding the same  kite. While at Execution Time: Sam lets go of the kite(he's 'swaze') but the kite remains in place because Moly is still holding it. 
+Sam and Molly are holding the same  kite. While at Execution Time: Sam lets go of the kite(he's 'swaze') but the kite remains in place because Moly is still holding it.
 
 The kite is secure due to the closure principle. If 'A'knows 'B' and 'B' knows 'C' then A must know 'C'
 
@@ -295,3 +297,96 @@ _   .-')                   .-') _  ('-.     _  .-')   .-') _                    
 Internet
 
 ```
+
+In JS a **closure** is usually referred to functions. **When a function returns it sent to garbage collection**. In this case with bobMarley, whalers, legend variables there is an **inner function** still holding the thread to the **inner variables of the outer function** in this case those variables will not be destroyed. **These inner variables are said to be held in** *execution context*.
+
+```JavaScript
+
+var kiteFlying = function(blackKite) {
+    var sam = "has the kite";
+
+    function molly() {
+        return sam;
+    }
+    if (blackKite == "sam") {
+        return sam;
+    } else {
+        return molly();
+    }
+};
+
+```
+
+```
+//console :
+kiteFlying("sam");
+"has the kite" //output
+kiteFlying("molly");
+"has the kite" //output
+
+```
+
+"sam" returns the variable **sam** which is "has the kite."
+
+"molly" input triggers the *else* condition, which in turn triggers the function **molly()** which then in returns the contents of **sam**, which at that time has the variable "has the kite". When "molly" activates, **kiteFlying()** has already returned, **but the variable "sam" is still available** _because molly() HAS CLOSURE RIGHTS_ Now you got that!
+
+### The function discussed has an inner function and based on the argument it receives it will either return sam from the outer function or molly from the inner function.
+
+**when a function returns** it is *wiped out*. In this case it is imperative to see that the inner function is able to fetch the variable from the outer function in the process of returning while the outer function is already gone. You can see that the function returns "else", which is another function, it is still wiped out.
+
+We then must ask ourselves **how does the inner function access the outer function's variable, when the OUTER FUNCTION NO LONGER EXISTS?**
+
+This is what happens:
+
+**The JS engine looks at the outer function at the time of the function's call and makes an inventory in memory.**
+
+**JS engine also looks at the inner function and makes an inventory**
+
+**Inner function**, *mapped* **variable sam** ( given from the outer function ) to **"has the kite."**
+
+WHen this occurs, it doesn't matter then what happens to the outer function. As long as the inner function is still being processed, the **JS engine keeps a pointer to the surrounding applicable variables such in the case, where sam = "has the kite."**
+
+### THanks to the Inventory List that JS created
+
+**JS code are closures rather than bits of code you execute** A **closure** is like a "dream catcher(?)" - they are symbols of a unit. **A closure records not only what code a function must execute but also the environment in which that said function is created in.**
+
+**An inner function is able to access the out function and also to the outer of that said function, this inner function has access all the way to the( the great cosmic) Global object**
+
+
+
+In this diagram the **principle of the closure** is applied to func 2. Due to the **principle of the closure** The JS engine will keep all variables active ( **just as they are at runtime, i.e at execution** ), until *func 2* **returned and finished its process.** On a side note -- it is often read on the great world wide web that **closures**  have "free variables", by free; it is meant that all the functions that can be used by the function but are not within the function's scope. The above diagram illustrates this concept.
+You can see that func 2 has access to the following free variables: A, B, and C. (D, is not a free variable it belongs to func 2)
+
+**So variable A is available to the global, function 1 and func 2)**
+
+**variables BC is available to function 1, and func 2**
+
+**variable D is only accessible by func 2**
+
+```JavaScript
+
+var withdraw = function(check) {
+  var balance = 419;
+  var transaction = function() {
+    if( check <= balance) {
+      return "Please don't forget to take your cash of " + check;
+    } else {
+      return "Balance too low for transaction to be performed "
+    }
+  };
+  return transaction();
+};
+
+```
+
+```
+//console output
+
+withdraw("200");
+"Please don't forget to take your cash of 200"
+withdraw("5000");
+"Balance too low for transaction to be performed "
+
+```
+
+In this example we further isolated the outer function data i.e balance from the public scope. This is done by creating an **inner function** which basically acts as an **interface** between the outer function and the outside world. **The outer function's data remains private -- there is no output directly from it** This property is an example of the **closure principle** which keeps tabs on the **lexical environment** In this case the outer function returns before the inner function does. The **outer function outputs
