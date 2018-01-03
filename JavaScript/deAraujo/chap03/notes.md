@@ -352,7 +352,9 @@ WHen this occurs, it doesn't matter then what happens to the outer function. As 
 
 **An inner function is able to access the out function and also to the outer of that said function, this inner function has access all the way to the( the great cosmic) Global object**
 
-
+<a>
+  <img src="https://github.com/stan-alam/Data_Structures/blob/develop/JavaScript/deAraujo/chap03/svg_files/ClosureS.svg" width="80%" height="80%">
+</a>
 
 In this diagram the **principle of the closure** is applied to func 2. Due to the **principle of the closure** The JS engine will keep all variables active ( **just as they are at runtime, i.e at execution** ), until *func 2* **returned and finished its process.** On a side note -- it is often read on the great world wide web that **closures**  have "free variables", by free; it is meant that all the functions that can be used by the function but are not within the function's scope. The above diagram illustrates this concept.
 You can see that func 2 has access to the following free variables: A, B, and C. (D, is not a free variable it belongs to func 2)
@@ -366,15 +368,15 @@ You can see that func 2 has access to the following free variables: A, B, and C.
 ```JavaScript
 
 var withdraw = function(check) {
-  var balance = 419;
-  var transaction = function() {
-    if( check <= balance) {
-      return "Please don't forget to take your cash of " + check;
-    } else {
-      return "Balance too low for transaction to be performed "
-    }
-  };
-  return transaction();
+    var balance = 419;
+    var transaction = function() {
+        if (check <= balance) {
+            return "Please don't forget to take your cash of " + check;
+        } else {
+            return "Balance too low for transaction to be performed "
+        }
+    };
+    return transaction();
 };
 
 ```
