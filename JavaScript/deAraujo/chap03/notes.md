@@ -219,17 +219,17 @@ var bobMarley = [4,5,6,7,8,9];
 
 ```
 
-2. Now we assign to **bobMarley** to another variable let's call it "**whalers**", and then to top it off.. we assign **whalers** to **legend** :
+2. Now we assign to **bobMarley** to another variable let's call it "**wailers**", and then to top it off.. we assign **wailers** to **legend** :
 
 ```javascript
 
-var whalers = bobMarley;
+var wailers = bobMarley;
 
-var legend = whalers;
+var legend = wailers;
 
 
 ```
-Here we created three different variables that are pointed to the heap. We can reassign the variable 'bobMarley' to null, but the array will still exist under the names of 'legend', and 'whalers.'
+Here we created three different variables that are pointed to the heap. We can reassign the variable 'bobMarley' to null, but the array will still exist under the names of 'legend', and 'wailers.'
 
 **as long as the array is still has some variable pointing to it... that array will not be garbage collected.**
 
@@ -237,13 +237,13 @@ Here we created three different variables that are pointed to the heap. We can r
 /*
 var bobMarley = [4,5,6,7,8,9];
 undefined
-var whalers = bobMarley;
+var wailers = bobMarley;
 
-var legend = whalers;
+var legend = wailers;
 undefined
 var bobMarley = null;          <--------------- notice how we set bobMarley to null
 undefined
-whalers;                       <=============== and here whalers still holds the values that once belonged to bobMarley
+wailers;                       <=============== and here wailers still holds the values that once belonged to bobMarley
 (6) [4, 5, 6, 7, 8, 9]
 legend;                        <~~~~~~~~~~~~~~~~ same here with the variable 'legend'
 (6) [4, 5, 6, 7, 8, 9]
@@ -267,7 +267,7 @@ The kite is secure due to the closure principle. If 'A'knows 'B' and 'B' knows '
           and 'B' entails 'C', then A knows C.
 
 
-If the array bobMarley was set to null, then the array will be marked for garbage collection. **yet the variables "whalers" and "legend" have closure on the array. Thisway the array is able to survive the garbage collection of its original pointer ... the variable known as 'bobMarley.'** *essentially the array lives on in the whalers and legend variable(s)*
+If the array bobMarley was set to null, then the array will be marked for garbage collection. **yet the variables "wailers" and "legend" have closure on the array. Thisway the array is able to survive the garbage collection of its original pointer ... the variable known as 'bobMarley.'** *essentially the array lives on in the wailers and legend variable(s)*
 
 ```text
 
@@ -298,7 +298,7 @@ Internet
 
 ```
 
-In JS a **closure** is usually referred to functions. **When a function returns it sent to garbage collection**. In this case with bobMarley, whalers, legend variables there is an **inner function** still holding the thread to the **inner variables of the outer function** in this case those variables will not be destroyed. **These inner variables are said to be held in** *execution context*.
+In JS a **closure** is usually referred to functions. **When a function returns it sent to garbage collection**. In this case with bobMarley, wailers, legend variables there is an **inner function** still holding the thread to the **inner variables of the outer function** in this case those variables will not be destroyed. **These inner variables are said to be held in** *execution context*.
 
 ```JavaScript
 
