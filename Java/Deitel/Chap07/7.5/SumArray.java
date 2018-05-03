@@ -1,4 +1,4 @@
-// computer the sum of the elements in an array
+// compute the summer of the array
 
 public class SumArray {
 
@@ -14,5 +14,4 @@ public class SumArray {
 
  		System.out.printf("Total of array elements: %d%n", total);
  	}
-
 }
