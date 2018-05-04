@@ -1,4 +1,4 @@
-## General Algorithm 1 - intro to Algorithm 
+## General Algorithm 1 - intro to Algorithms
 
 Initial commit 
 
